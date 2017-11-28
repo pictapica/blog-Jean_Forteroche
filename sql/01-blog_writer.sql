@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 28 nov. 2017 à 20:34
+-- Généré le :  mar. 28 nov. 2017 à 22:01
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -48,11 +48,28 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `post_author` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `user_id` varchar(100) CHARACTER SET utf8 NOT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
   `creation_date` datetime NOT NULL,
   `update_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `pseudo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `e-mail` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
