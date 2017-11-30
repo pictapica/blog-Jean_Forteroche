@@ -5,8 +5,10 @@ html {
     margin:0;
     padding:0;
     background: url('../web/images/background1.jpg') no-repeat center fixed; 
-    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-    background-size: cover; /* version standardisée */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
@@ -41,6 +43,7 @@ p {
     font-weight: 300;
     line-height: 1.9em;
     color: #000;
+    background-color: #fff;
 
     text-align: justify;
 }
@@ -58,7 +61,7 @@ a, a:hover, a:focus {
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    
+
 }
 
 .navbar-btn {
@@ -87,6 +90,7 @@ a, a:hover, a:focus {
     width:70%;
     margin:auto;
 }
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
