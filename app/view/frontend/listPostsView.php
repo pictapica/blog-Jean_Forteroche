@@ -2,15 +2,15 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<div class="container">
+
 
     <header class="row">
         <div class="col-lg-12">
-            <h1>Mon super blog !</h1>
+            <h1>Billet simple pour l'Alaska</h1>
         </div>
     </header>
     
-    <p>Derniers billets du blog :</p>
+<p>Les derniers episodes ! </p>>>
 
 
     <?php
@@ -26,7 +26,7 @@
                 <p>
                     <?= nl2br(htmlspecialchars($data['content'])) ?>
                     <br /><br /><br />
-                    <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                    <em><a href="index2.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
                 </p>
             </div>
         </div>

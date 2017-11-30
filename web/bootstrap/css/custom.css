@@ -4,7 +4,7 @@
 html { 
     margin:0;
     padding:0;
-    background: url('C:/wamp64/www/blog_projet3/web/images/background1.jpg') no-repeat center fixed; 
+    background: url('../web/images/background1.jpg') no-repeat center fixed; 
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
 }
@@ -29,6 +29,7 @@ a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+
 h3 {
     font-family: 'Kozuka Gothic Pro EL', sans-serif;
     font-size: 40px;
@@ -65,6 +66,19 @@ h4 {
     margin: 40px 0;
 }
 
+.news p
+{
+    background-color:#c0d8e8;
+    margin-top:0px;
+    margin-bottom:40px;
+    padding: 20px;
+}
+
+.news
+{
+    width:70%;
+    margin:auto;
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
