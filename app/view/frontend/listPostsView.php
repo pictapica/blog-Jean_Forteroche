@@ -6,7 +6,7 @@
 
     <header class="row">
         <div class="col-lg-12">
-            <h1>Mon super blog !</h1>
+            <h1>Billet simple pour l'Alaska</h1>
         </div>
     </header>
     

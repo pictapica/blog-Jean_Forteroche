@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-    <h1>Mon super blog !</h1>
+    <h1>Billet simple pour l'Alaska</h1>
     <p><a href="index.php">Retour à la liste des billets</a></p>
 
     <div class="post">
