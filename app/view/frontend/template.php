@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
-        <link href="public/css/style.css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="../web/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../web/bootstrap/css/bootstrap.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="../web/bootstrap/css/custom.css"> 
     </head>
         
     <body>
