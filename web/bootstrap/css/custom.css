@@ -77,20 +77,26 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
-.news p
+.post p
 {
-    background-color:#c0d8e8;
+    background-color:#fff;
     margin-top:0px;
     margin-bottom:40px;
     padding: 20px;
 }
 
-.news
+.post
 {
     width:70%;
     margin:auto;
 }
 
+.comments
+{
+    width:70%;
+    margin:auto;
+
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
