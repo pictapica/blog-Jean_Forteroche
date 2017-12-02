@@ -1,4 +1,5 @@
 
+
 <?php $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
@@ -11,9 +12,8 @@
         <div class="col-lg-10">
             <h1>Bienvenue sur mon blog !</h1>
             <p>Vous aller pouvoir y découvrir régulièrement des épisodes de mon
-                nouveau livre. N'hésitez pas à commenter. Je serai très heureux
-                d'avoir votre retour et là je vais tester d'écrire encore plus
-                pour voir comment se comporte mon texte.</p>
+                nouveau livre " Billet simple pour l'Alaska". N'hésitez pas à commenter. Je serai très heureux
+                d'avoir votre retour. Je vous souhaite une bonne lecture.</p>
         </div>
         <div class="col-lg-1"></div>
     </header>
