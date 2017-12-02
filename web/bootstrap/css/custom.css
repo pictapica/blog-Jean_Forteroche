@@ -4,7 +4,7 @@
 html { 
     margin:0;
     padding:0;
-    background: url('../../../web/images/background1.jpg') no-repeat center fixed; 
+    background: url('../web/images/background1.jpg') no-repeat center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -308,10 +308,6 @@ a.article, a.article:hover {
 
     .text-white {
         color : #fff !important;
-    }
-
-    .headline {
-        
     }
     /* ---------------------------------------------------
         MEDIAQUERIES

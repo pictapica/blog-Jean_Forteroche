@@ -17,7 +17,6 @@
         </div>
         <div class="col-lg-1"></div>
     </header>
-    
     <div class="row">
         <?php
         while ($data = $posts->fetch()) {
@@ -37,11 +36,11 @@
                 </div>
             </div>
         </div>
-</div>    
-        <?php
-    }
-    $posts->closeCursor();
-    ?>
-    <?php $content = ob_get_clean(); ?>
+    </div>
+    <?php
+}
+$posts->closeCursor();
+?>
+<?php $content = ob_get_clean(); ?>
 
-    <?php require('template.php'); ?>
+<?php require('template.php'); ?>
