@@ -9,6 +9,8 @@ class Post {
     protected $_creation_date;
     protected $_update_date;
 
+    
+    
     //getters
     public function getID() {
         return $this->_id;
