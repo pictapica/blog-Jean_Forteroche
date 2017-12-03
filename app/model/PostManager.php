@@ -7,7 +7,7 @@ require_once ("../app/model/Manager.php");
 
 class PostManager extends Manager {
 
-    // Méthode pour récupérer tous les billets
+    // récupérer tous les billets
     public function getPosts() {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, user_id, content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
@@ -16,7 +16,7 @@ class PostManager extends Manager {
         return $req;
     }
 
-    // Méthode pour récupérer les informations liées à un billet
+    // récupérer les informations liées à un billet
     public function getPost($postId) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, user_id, content, ' .
