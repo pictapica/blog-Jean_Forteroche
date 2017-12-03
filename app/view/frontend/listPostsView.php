@@ -12,7 +12,7 @@
         <div class="col-lg-10">
             <h1>Bienvenue sur mon blog !</h1>
             <p>Vous aller pouvoir y découvrir régulièrement des épisodes de mon
-                nouveau livre " Billet simple pour l'Alaska". N'hésitez pas à commenter. Je serai très heureux
+                nouveau livre " Billet simple pour l'Alaska". N'hésitez pas à commenter. Je serais très heureux
                 d'avoir votre retour. Je vous souhaite une bonne lecture.</p>
         </div>
         <div class="col-lg-1"></div>

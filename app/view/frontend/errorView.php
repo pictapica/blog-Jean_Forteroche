@@ -1,3 +1,3 @@
 
 <?php>echo 'Erreur : ' . $e->getMessage();
- require('template.php'); ?>
+ require('template.php'); 
