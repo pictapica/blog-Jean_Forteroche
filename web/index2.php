@@ -67,7 +67,7 @@
                 </nav>
                 
                 <?php
-                require('../app/controller/frontend.php');
+                require('../app/controler/frontend.php');
 
                 try { // On essaie de faire des choses
                     if (isset($_GET['action'])) {

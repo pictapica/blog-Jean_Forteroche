@@ -17,15 +17,16 @@
         </div>
         <div class="col-lg-1"></div>
     </header>
-    <div class="row">
+    <section class="row">
+            <div class="col-xs-6 col-lg-4">
         <?php
         while ($data = $posts->fetch()) {
             ?>
-            <div id="contener">
+            <div id="container">
                 <div class="post">
                     <h3>
-                        <?= htmlspecialchars($data['title']) ?>
-                        <em>le <?= $data['creation_date_fr'] ?></em>
+                        <?= htmlspecialchars($data['title']) ?><br/>
+                        <em> <?= $data['creation_date_fr'] ?></em>
                     </h3>
 
                     <p>
@@ -35,8 +36,9 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+    </section>
+    
     <?php
 }
 $posts->closeCursor();
