@@ -24,20 +24,21 @@
             <p><a href="index2.php">Retour à la liste des billets</a></p>
         </div>
         </div>
+    
         <header class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
-                <div class="post">
+                
                     <h3>
                         <?= htmlspecialchars($post['title']) ?><br />
                         
                     </h3>
-                    <h4><em> <?= $post['creation_date_fr'] ?></em></h4>
+                    <h4><em> <?= $post['creation_date_fr'] ?></em></h4><br /><br/>
                     
                     <p>
-                        <?= nl2br(htmlspecialchars($post['content'])) ?>
+                        <?= nl2br(htmlspecialchars($post['content'])) ?><br /><br/>
                     </p>
-                </div>
+                
             </div>
             <div class="col-lg-1"></div>
         </header>
@@ -63,6 +64,7 @@
             </div>
         </div>
         
+    
 </div>
         <br />
         <?php

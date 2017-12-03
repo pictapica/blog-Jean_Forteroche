@@ -53,9 +53,8 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
-
 .navbar {
-    padding: 15px 10px;
+    
     background: transparent;
     border: none;
     border-radius: 0;
@@ -188,7 +187,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #95a7b3;
+    background: #5a5c61;
 }
 
 ul.CTAs {
@@ -606,13 +605,18 @@ h3:after {
     text-align: center;
     color: #fff;
 
-    .text-thin {
-        font-weight: 100px;
-    }
+.text-thin {
+    font-weight: 100px;
+}
 
-    .text-white {
-        color : #fff !important;
-    }
+.text-white {
+    color : #fff !important;
+}
+.btn btn-info {
+    background-image: linear-gradient(to bottom,#8e7c49 0,#fff 100%);
+    background-repeat: repeat-x;
+    background-color: #8e7c49;
+}
     /* ---------------------------------------------------
         MEDIAQUERIES
     ----------------------------------------------------- */

@@ -50,7 +50,7 @@
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
                             </h3>
-                            <div class="intro"> <a href="#"></a> </div>
+                            <div class="intro"> <a href="#"></a> Episode <?= $data['id'] ?> </div>
                         </div>
                         <div class="card-info">
                             <p>
