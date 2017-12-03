@@ -50,19 +50,17 @@
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
                             </h3>
-                            <div class="intro"> <a href="#">Inspiration</a> </div>
+                            <div class="intro"> <a href="#"></a> </div>
                         </div>
                         <div class="card-info">
                             <p>
                                 <?= nl2br(htmlspecialchars($data['content'])) ?>
                                 <br /><br /><br />
-
                             </p> 
-                            <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+                            <a href="index2.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
-                                <li><span class="licon icon-like"></span><a href="#">2</a></li>
                                 <li><span class="licon icon-com"></span><a href="#">12</a></li>
                                 <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
