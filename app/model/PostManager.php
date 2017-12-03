@@ -11,7 +11,7 @@ class PostManager extends Manager {
     public function getPosts() {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, user_id, content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
-                . ' AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 3') or die('Impossible d\'effectuer la requête');
+                . ' AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 6') or die('Impossible d\'effectuer la requête');
 
         return $req;
     }

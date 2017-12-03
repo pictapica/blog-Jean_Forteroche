@@ -27,7 +27,6 @@
 
 
         <div class="container-fluid">
-
             <header class="row">
                 <div class="col-lg-1">
                 </div>
@@ -39,42 +38,14 @@
                 </div>
                 <div class="col-lg-1"></div>
             </header>
-<br /><br /><br />
-            
+            <br /><br /><br />
+
             <section class="blog-container">
-                <div class="blog-card col-lg-4">
-                
-                    
-                        <div class="title-content">
-                            <h3>
-                                <?= htmlspecialchars($post['title']) ?><br/>
-                            </h3>
-                            <div class="intro"> <a href="#">Inspiration</a> </div>
-                        </div>
-                        <div class="card-info">
-                            <p>
-                                            <?= nl2br(htmlspecialchars($post['content'])) ?>
-                                            <br /><br /><br />
-                                            
-                                        </p> 
-                            <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
-                        </div>
-                        <div class="utility-info">
-                            <ul class="utility-list">
-                                <li><span class="licon icon-like"></span><a href="#">2</a></li>
-                                <li><span class="licon icon-com"></span><a href="#">12</a></li>
-                                <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
-                            </ul>
-                        </div>
-                        <div class="gradient-overlay"></div>
-                        <div class="color-overlay"></div>
-                        
-                    </div><!-- /.blog-card -->
-                 <div class="blog-card col-lg-4">
-                <?php
-                while ($data = $posts->fetch()) {
-                    ?> 
-                    
+                <div class="row blog-card col-lg-4">
+                    <?php
+                    while ($data = $posts->fetch()) {
+                        ?>
+
                         <div class="title-content">
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
@@ -83,10 +54,10 @@
                         </div>
                         <div class="card-info">
                             <p>
-                                            <?= nl2br(htmlspecialchars($data['content'])) ?>
-                                            <br /><br /><br />
-                                            
-                                        </p> 
+                                <?= nl2br(htmlspecialchars($data['content'])) ?>
+                                <br /><br /><br />
+
+                            </p> 
                             <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
                         </div>
                         <div class="utility-info">
@@ -99,15 +70,15 @@
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
                         <?php
-                }
-                $posts->closeCursor();
-                ?>
-                    </div><!-- /.blog-card -->   
-               <div class="blog-card col-lg-4">
-                <?php
-                while ($data = $posts->fetch()) {
-                    ?> 
-                    
+                    }
+                    $posts->closeCursor();
+                    ?>
+                </div><!-- /.blog-card -->
+                <div class="row blog-card col-lg-4">
+                    <?php
+                    while ($data = $posts->fetch()) {
+                        ?> 
+
                         <div class="title-content">
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
@@ -116,10 +87,10 @@
                         </div>
                         <div class="card-info">
                             <p>
-                                            <?= nl2br(htmlspecialchars($data['content'])) ?>
-                                            <br /><br /><br />
-                                            
-                                        </p> 
+                                <?= nl2br(htmlspecialchars($data['content'])) ?>
+                                <br /><br /><br />
+
+                            </p> 
                             <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
                         </div>
                         <div class="utility-info">
@@ -132,10 +103,43 @@
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
                         <?php
-                }
-                $posts->closeCursor();
-                ?>
-                    </div><!-- /.blog-card -->
+                    }
+                    $posts->closeCursor();
+                    ?>
+                </div><!-- /.blog-card -->
+                <div class="row blog-card col-lg-4">
+                    <?php
+                    while ($data = $posts->fetch()) {
+                        ?> 
+
+                        <div class="title-content">
+                            <h3>
+                                <?= htmlspecialchars($data['title']) ?><br/>
+                            </h3>
+                            <div class="intro"> <a href="#">Inspiration</a> </div>
+                        </div>
+                        <div class="card-info">
+                            <p>
+                                <?= nl2br(htmlspecialchars($data['content'])) ?>
+                                <br /><br /><br />
+
+                            </p> 
+                            <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+                        </div>
+                        <div class="utility-info">
+                            <ul class="utility-list">
+                                <li><span class="licon icon-like"></span><a href="#">2</a></li>
+                                <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
+                            </ul>
+                        </div>
+                        <div class="gradient-overlay"></div>
+                        <div class="color-overlay"></div>
+                        <?php
+                    }
+                    $posts->closeCursor();
+                    ?>
+                </div><!-- /.blog-card -->
             </section>
             <div class="row">
 
@@ -170,7 +174,39 @@
                 ?>
 
             </div>
+            <div class="blog-card col-lg-4">
+                <?php
+                while ($data = $posts->fetch()) {
+                    ?> 
 
+                    <div class="title-content">
+                        <h3>
+                            <?= htmlspecialchars($data['title']) ?><br/>
+                        </h3>
+                        <div class="intro"> <a href="#">Inspiration</a> </div>
+                    </div>
+                    <div class="card-info">
+                        <p>
+                            <?= nl2br(htmlspecialchars($data['content'])) ?>
+                            <br /><br /><br />
+
+                        </p> 
+                        <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+                    </div>
+                    <div class="utility-info">
+                        <ul class="utility-list">
+                            <li><span class="licon icon-like"></span><a href="#">2</a></li>
+                            <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                            <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
+                        </ul>
+                    </div>
+                    <div class="gradient-overlay"></div>
+                    <div class="color-overlay"></div>
+                    <?php
+                }
+                $posts->closeCursor();
+                ?>
+            </div><!-- /.blog-card -->
         </div>
         <!-- jQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

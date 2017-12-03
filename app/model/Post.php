@@ -9,8 +9,24 @@ class Post {
     protected $_creation_date;
     protected $_update_date;
 
-    
-    
+    public function __construct($valeurs = []) {
+        if (!empty($valeurs)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
+            $this->hydrate($valeurs);
+        }
+    }
+
+    //Méthode assignant les valeurs spécifiées aux attributs correspondant.
+
+    public function hydrate($donnees) {
+        foreach ($donnees as $attribut => $valeur) {
+            $methode = 'set' . ucfirst($attribut);
+
+            if (is_callable([$this, $methode])) {
+                $this->$methode($valeur);
+            }
+        }
+    }
+
     //getters
     public function getID() {
         return $this->_id;
@@ -38,11 +54,7 @@ class Post {
 
     //setters
     public function setId($id) {
-        if (is_int($id)) {
-            if ($id > 0) {
-                $this->_id = $id;
-            }
-        }
+        $this->_id = (int) $id;
     }
 
     public function setTitle($title) {
@@ -52,9 +64,7 @@ class Post {
     }
 
     public function setUseId($user_id) {
-        if (is_int($user_id)) {
-            $this->_user_id = $user_id;
-        }
+        $this->_user_id = (int) $user_id;
     }
 
     public function setContent($content) {
