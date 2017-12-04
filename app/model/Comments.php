@@ -7,6 +7,24 @@ Class Comments {
     protected $_author;
     protected $_comment;
     protected $_comment_date;
+    
+    public function __construct($valeurs = []) {
+        if (!empty($valeurs)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
+            $this->hydrate($valeurs);
+        }
+    }
+
+    //Méthode assignant les valeurs spécifiées aux attributs correspondant.
+
+    public function hydrate($donnees) {
+        foreach ($donnees as $attribut => $valeur) {
+            $methode = 'set' . ucfirst($attribut);
+
+            if (is_callable([$this, $methode])) {
+                $this->$methode($valeur);
+            }
+        }
+    }
 
     public function getId() {
         return $this->_id;
