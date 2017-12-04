@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once("../app/model/Manager.php");
 
 class CommentManager extends Manager {
@@ -22,10 +20,19 @@ class CommentManager extends Manager {
         return $affectedLines;
     }
 
-    public function reportComment()
-    {
+    public function reportComment() {
         $db = $this->dbConnect();
-
-
+        
     }
+
+    public function showAllComments() {
+        $comments = array();
+        $db = $this->dbConnect();
+        $q = $db->query('SELECT * FROM comments');
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
+            $comments[] = new Comment($donnees);
+        }
+        return $comments;
+    }
+
 }

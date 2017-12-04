@@ -11,67 +11,76 @@
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="../../../web/bootstrap/css/custom.css"> 
     </head>
-        
-    <body><?php $title = htmlspecialchars($post['title']); ?>
 
-<?php ob_start(); ?>
+    <body>
+        <?php $title = htmlspecialchars($post['title']); ?>
 
-<div class='container-fluid'>
+        <?php ob_start(); ?>
 
-    <div class="row">
+        <div class='container-fluid'>
 
-        <div class="col-lg-6">
-            <h5><a href="index2.php">Retour à la liste des billets</a></h5>
-        </div>
-        </div>
-    
-        <header class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-                
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><a href="index2.php">Retour à la liste des billets</a></h5>
+                </div>
+            </div>
+            <section class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
                     <h3>
                         <?= htmlspecialchars($post['title']) ?><br />
-                        
                     </h3>
                     <h4><em> <?= $post['creation_date_fr'] ?></em></h4><br /><br/>
-                    
                     <p>
                         <?= nl2br(htmlspecialchars($post['content'])) ?><br /><br/>
                     </p>
-                
-            </div>
-            <div class="col-lg-1"></div>
-        </header>
-        <div class="row">
-            <div class="col-lg-1"></div>
+                </div>
+                <div class="col-lg-1"></div>
+            </section>
+
+            <div class="line"></div>
+
             <div class="row">
-                <div class="comments">
-                    <h2>Commentaires</h2>
+                
+                <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <br />
+                        <?php
+                        while ($comment = $comments->fetch()) {
+                            ?>
+                            <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+                            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br />
+                    </div>
+                <div class="col-lg-1"></div>
+            </div>
+             <div class="line"></div>   
+                <div class="col-lg-1"></div>
+                <div class="comments col-lg-10">
+                    <h2>Ecrire un commentaires</h2><br/>
                     <form action="index2.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-                        <div>
-                            <label for="author">Auteur</label><br />
-                            <input type="text" id="author" name="author" />
+                        <div class="form-group">
+                            
+                            <div class="col-sm-10">
+                                <input type="text" id="author" placeholder="Votre nom" name="author" class="form-control"/>
+                            </div>
+                        </div><br /><br /><br />
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <textarea id="comment" name="comment" placeholder="Votre messsage" rows="6" class="form-control"></textarea><br>
+                            </div>
                         </div>
-                        <div>
-                            <label for="comment">Commentaire</label><br />
-                            <textarea id="comment" name="comment"></textarea>
-                        </div>
-                        <div>
-                            <input type="submit" />
+                        <div class="form-group">
+                            <div class=" col-sm-10">
+                                <input id="submitcomment" type="submit" value="Envoyer" name="submitcomment" class="btn btn-default">
+                            </div>
                         </div>
                     </form>
                 </div>
-            </div>
+                <div class="col-lg-1"></div>
+
+
+             
         </div>
-        
-    
-</div>
-        <br />
-        <?php
-        while ($comment = $comments->fetch()) {
-            ?>
-            <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br />
 
             <?php
         }
@@ -79,7 +88,7 @@
         <?php $content = ob_get_clean(); ?>
 
         <?php require('template.php'); ?>
-            <!-- jQuery CDN -->
-        
+
+
     </body>
 </html>

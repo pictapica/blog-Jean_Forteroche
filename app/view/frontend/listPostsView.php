@@ -45,35 +45,30 @@
 
             <section class="blog-container">
                 <div class="row blog-card col-lg-4">
-                    <?php
-                    while ($data = $posts->fetch()) {
-                        ?>
+                    <?php foreach ($posts as $post):?>
 
                         <div class="title-content">
                             <h3>
-                                <?= htmlspecialchars($data['title']) ?><br/>
+                                <?= $post['title']?><br/>
                             </h3>
                             <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>
-                                <?= nl2br(htmlspecialchars($data['extrait'])) ?>...
+                                <?= $post['extrait'] ?>...
                                 <br /><br /><br />
                             </p> 
-                            <a href="index2.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
+                            <a href="index2.php?action=post&amp;id=$post['id']?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
                                 <li><span class="licon icon-com"></span><a href="#">12</a></li>
-                                <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
+                                <li><span class="licon icon-dat"></span><em> <?= $post['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
-                        <?php
-                    }
-                    $posts->closeCursor();
-                    ?>
+                        <?php endforeach;?>
                 </div><!-- /.blog-card -->
                 <div class="row blog-card col-lg-4">
                     <?php
@@ -138,39 +133,7 @@
                     ?>
                 </div><!-- /.blog-card -->
             </section>
-            <div class="row">
-
-                <?php
-                while ($data = $posts->fetch()) {
-                    ?>
-                    <section class="col-xs-12 col-md-12">
-                        <!-- Titre du chapitre -->
-                        <div class="row title">
-                            <div class="col-xs-12 col-md-offset-2 col-md-4">
-                                <div class="wrapper">
-                                    <div class="">
-                                        <h3>
-                                            <?= htmlspecialchars($data['title']) ?><br/>
-                                            <em> <?= $data['creation_date_fr'] ?></em>
-                                        </h3>
-
-                                        <p>
-                                            <?= nl2br(htmlspecialchars($data['content'])) ?>
-                                            <br /><br /><br />
-                                            <em><a href="index2.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <?php
-                }
-                $posts->closeCursor();
-                ?>
-
-            </div>
+            
             
         </div>
         <!-- jQuery CDN -->
