@@ -97,9 +97,8 @@
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
                         <?php
-                    }
-                    $posts->closeCursor();
-                    ?>
+}
+?>
                 </div><!-- /.blog-card -->
                 <div class="row blog-card col-lg-4">
                     <?php
