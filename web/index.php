@@ -29,7 +29,7 @@
                 </video>
                 <div class="title-container">
                     <div class="headline">
-                        <img src="../web/images/logotransparent.png" height="130" alt="Jean Forteroche">
+                        <img src="../web/images/logotransparent.png" height="130" alt="Jean Forteroche"><br/>
 
                         <h1 class="text-white text-thin">Billet simple pour l'Alaska</h1>
                         <h4 class="text-white text-thin">Decouvrez son prochain livre  chapitre par chapitre</h4> <br/>  

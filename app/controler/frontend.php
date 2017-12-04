@@ -7,7 +7,8 @@ function listPosts()
 {
     $postManager =new PostManager(); //Création d'un objet
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-
+    $lastpost =$postManager->getPostbyone();
+    
     require('../app/view/frontend/listPostsView.php');
 }
 
@@ -37,7 +38,7 @@ function addComment($postId, $author, $comment)
     }
 }
 // Reporte les commentaires signalés
-function reportComment($commentId)
+function reportComment($postId,$commentId)
 {
-    header('Location: index.php?action=comment&id=' .$postId,$comment);
+    header('Location: index.php?action=comment&id=' .$postId,$commentId);
 }

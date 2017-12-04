@@ -21,7 +21,7 @@
     <div class="row">
 
         <div class="col-lg-6">
-            <p><a href="index2.php">Retour à la liste des billets</a></p>
+            <h5><a href="index2.php">Retour à la liste des billets</a></h5>
         </div>
         </div>
     
