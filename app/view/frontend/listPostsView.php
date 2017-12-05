@@ -45,17 +45,19 @@
 
             <section class="blog-container">
                 <div class="row blog-card col-lg-4">
-                    <?php foreach ($posts as $post):?>
+                    <?php
+                    while ($data = $lastpost->fetch()) {
+                        ?>
 
                         <div class="title-content">
                             <h3>
-                                <?= $post['title']?><br/>
+                                <?= $data['title']?><br/>
                             </h3>
                             <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>
-                                <?= $post['extrait'] ?>...
+                                <?= $data['extrait'] ?>...
                                 <br /><br /><br />
                             </p> 
                             <a href="index2.php?action=post&amp;id=$post['id']?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
@@ -63,12 +65,15 @@
                         <div class="utility-info">
                             <ul class="utility-list">
                                 <li><span class="licon icon-com"></span><a href="#">12</a></li>
-                                <li><span class="licon icon-dat"></span><em> <?= $post['creation_date_fr'] ?></em></li>
+                                <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
-                        <?php endforeach;?>
+                        <?php
+                    }
+                    $posts->closeCursor();
+                    ?>
                 </div><!-- /.blog-card -->
                 <div class="row blog-card col-lg-4">
                     <?php
@@ -97,8 +102,9 @@
                         <div class="gradient-overlay"></div>
                         <div class="color-overlay"></div>
                         <?php
-                        }
-                        ?>
+                    }
+                    $posts->closeCursor();
+                    ?>
                 </div><!-- /.blog-card -->
                 <div class="row blog-card col-lg-4">
                     <?php
