@@ -34,11 +34,11 @@ function addComment($postId, $author, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index2.php?action=post&id=' . $postId);
     }
 }
 // Reporte les commentaires signalés
 function reportComment($postId,$commentId)
 {
-    header('Location: index.php?action=comment&id=' .$postId,$commentId);
+    header('Location: index2.php?action=comment&id=' .$postId,$commentId);
 }
