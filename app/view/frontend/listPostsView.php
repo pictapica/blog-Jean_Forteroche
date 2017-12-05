@@ -51,13 +51,13 @@
 
                         <div class="title-content">
                             <h3>
-                                <?= $data['title']?><br/>
+                                <?= htmlspecialchars($data['title'])?><br/>
                             </h3>
                             <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>
-                                <?= $data['extrait'] ?>...
+                                <?= htmlspecialchars($data['extrait']) ?>...
                                 <br /><br /><br />
                             </p> 
                             <a href="index2.php?action=post&amp;id=$post['id']?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
