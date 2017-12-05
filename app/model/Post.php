@@ -9,20 +9,20 @@ class Post {
     protected $_creation_date;
     protected $_update_date;
 
-    public function __construct($valeurs = []) {
-        if (!empty($valeurs)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
-            $this->hydrate($valeurs);
+    public function __construct($data) {
+        if (!empty($data)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
+            return $this->hydrate($data);
         }
     }
 
     //Méthode assignant les valeurs spécifiées aux attributs correspondant.
 
-    public function hydrate($donnees) {
-        foreach ($donnees as $attribut => $valeur) {
-            $methode = 'set' . ucfirst($attribut);
+    public function hydrate(array $data) {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
 
-            if (is_callable([$this, $methode])) {
-                $this->$methode($valeur);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
             }
         }
     }
