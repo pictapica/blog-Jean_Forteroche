@@ -46,21 +46,21 @@
             <section class="blog-container">
                 <div class="row blog-card col-lg-4">
                     <?php
-                    while ($data = $lastpost->fetch()) {
+                    while ($data = $posts->fetch()) {
                         ?>
 
                         <div class="title-content">
                             <h3>
-                                <?= htmlspecialchars($data['title'])?><br/>
+                                <?= htmlspecialchars($data['title']) ?><br/>
                             </h3>
                             <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>
-                                <?= htmlspecialchars($data['extrait']) ?>...
+                                <?= nl2br(htmlspecialchars($data['extrait'])) ?>...
                                 <br /><br /><br />
                             </p> 
-                            <a href="index2.php?action=post&amp;id=$post['id']?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
+                            <a href="index2.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite<span class="licon icon-arr icon-black"></span></a>
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
@@ -75,16 +75,16 @@
                     $posts->closeCursor();
                     ?>
                 </div><!-- /.blog-card -->
-                <div class="row blog-card col-lg-4">
+                    <div class="row blog-card col-lg-4">
                     <?php
-                    while ($data = $lastpost->fetch()) {
+                    while ($data = $posts->fetch()) {
                         ?>
 
                         <div class="title-content">
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
                             </h3>
-                            <div class="intro"> <a href="#"></a> Episode <?= $data['id'] ?> </div>
+                            <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>
@@ -115,7 +115,7 @@
                             <h3>
                                 <?= htmlspecialchars($data['title']) ?><br/>
                             </h3>
-                            <div class="intro"> <a href="#"></a> Episode <?= $data['id'] ?> </div>
+                            <div class="intro"> <a href="#"></a>  </div>
                         </div>
                         <div class="card-info">
                             <p>

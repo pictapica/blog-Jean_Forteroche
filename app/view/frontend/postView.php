@@ -57,12 +57,12 @@
                 <div class="col-lg-1"></div>
             </div>
             <div class="line"></div>   
+            <div class="row">
             <div class="col-lg-1"></div>
             <div class="comments col-lg-10">
                 <h2>Ecrire un commentaires</h2><br/>
                 <form action="index2.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                     <div class="form-group">
-
                         <div class="col-sm-10">
                             <input type="text" id="author" placeholder="Votre nom" name="author" class="form-control"/>
                         </div>
@@ -82,7 +82,7 @@
             <div class="col-lg-1"></div>
 
 
-
+            </div>
         </div>
 
 
