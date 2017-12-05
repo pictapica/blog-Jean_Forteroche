@@ -292,7 +292,7 @@ a.article, a.article:hover {
     box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
     text-align: center;
     transition:all 0.4s;
-    background: url(https://unsplash.it/600/800?image=1061) center no-repeat;
+    background: url(https://picsum.photos/500/?random) center no-repeat;
     background-size: 100%;
 }
 .blog-card a{ 
@@ -515,6 +515,7 @@ h3:after {
     background-position: -33px -6px;
 
 }
+
 
 @media (max-width:750px)
 {

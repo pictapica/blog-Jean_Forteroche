@@ -6,7 +6,7 @@ require_once ("../app/model/Manager.php");
 class PostManager extends Manager {
 
     // récupérer tous les billets
-    public function getPosts() {
+    public function getPosts($debut = -1, $limite = -1) {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, user_id, left(content, 250) as extrait,'
                 . ' content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
@@ -30,7 +30,7 @@ class PostManager extends Manager {
 
     public function getPostbyone() {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM post WHERE id = (SELECT MAX(id) FROM post');
+        $req = $db->prepare('SELECT * FROM post ORDER BY creation_date DESC LIMIT 10 OFFSET 1');
         return $req;
     }
 
