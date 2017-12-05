@@ -6,7 +6,7 @@ require_once ("../app/model/Manager.php");
 class PostManager extends Manager {
 
     // récupérer tous les billets
-    public function getPosts($debut = -1, $limite = -1) {
+    public function getPosts() {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, user_id, left(content, 250) as extrait,'
                 . ' content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
@@ -46,4 +46,8 @@ class PostManager extends Manager {
          return $req;
     }
      * 
+ * 
+ * Addpost
+ * deletepost
+ * updatepost ( faut-il
      */

@@ -35,4 +35,11 @@ class CommentManager extends Manager {
         return $comments;
     }
 
+    
+    /* Ajouter : 
+     * addComment
+     * deleteComment
+     * updateComment
+     * signalComment
+     */
 }

@@ -4,15 +4,21 @@ require_once ("model/Manager.php");//Pour se connecter à la base de données
 
 class UserManager extends Manager
 {
+    /**
+     * 
+     * @param user $user
+     */
     public function addUser ($user)
-    {   $db = $this->dbConnect();
+    {   
+        
+        $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO user (firstname, name, pseudo, email, password) VALUES (:firstname, :name, :pseudo, :email, :password)');
          $req->execute(array(
-             'firstname'=>$firstname,
-             'name'=>$name,
-             'pseudo'=>$pseudo,
-             'email'=>$email,
-             'password'=> hash("sha512", $password),
+             'firstname'=>$user->getFisrtNAme(),
+             'name'=>$user->getName(),
+             'pseudo'=>$user->getPseudo(),
+             'email'=>$user->getEmail(),
+             'password'=> hash("sha512", $user->getPassword()),
              
              ));
          
@@ -20,7 +26,12 @@ class UserManager extends Manager
               'user_id' =>$this->dbConnect()->lastInsertId()
           ]);
     }
-    
+    /**
+     * 
+     * @param type $pseudo
+     * @param type $password
+     * @return type
+     */
     public function connect ($pseudo, $password) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id FROM user WHERE pseudo = :pseudo AND password = :password');

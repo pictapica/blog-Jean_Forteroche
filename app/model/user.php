@@ -37,11 +37,11 @@ class User
         return $this->_firstname;
     }
     
-    public function getname() {
+    public function getName() {
         return $this->_name;
     }
     
-    public function getpseudo() {
+    public function getPseudo() {
         return $this->_pseudo;
     }
     

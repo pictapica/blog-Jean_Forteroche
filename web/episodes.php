@@ -37,15 +37,7 @@
                     <li>
                         <a href="index.php">ACCUEIL</a>
                         <a href="#">A PROPOS</a>
-                    </li>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">EPISODES</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="index2.php?action=post&amp;id=1 ?>">Chapitre 1</a></li>
-                            <li><a href="index2.php?action=post&amp;id=2 ?>">Chapitre 2</a></li>
-                            <li><a href="index2.php?action=post&amp;id=3 ?>">Chapitre 3</a></li>
-                            <li><a href="index2.php?action=post&amp;id=4 ?>">chapitre 4</a></li>
-                        </ul>
+                        <a href="episodes.php">EPISODES</a>
                     </li>
                 </ul>
                 <br/>
@@ -104,13 +96,13 @@
                 ?>     
             </div>         
         </div>
-        
+
         <!-- jQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <!-- Bootstrap Js CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        
+
 
     </body>
 </html>
