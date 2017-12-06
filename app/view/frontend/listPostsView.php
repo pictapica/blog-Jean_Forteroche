@@ -48,7 +48,7 @@
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
-                                <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                <li><span class="licon icon-com"></span><a href="#"><?= $data['nbcomments']?></a></li>
                                 <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
-                                <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                <li><span class="licon icon-com"></span><a href="#"><?php $result?></a></li>
                                 <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
-                                <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                <li><span class="licon icon-com"></span><a href="#"><?php $result?></a></li>
                                 <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>

@@ -20,21 +20,32 @@ class CommentManager extends Manager {
         return $affectedLines;
     }
 
-    public function reportComment() {
-        $db = $this->dbConnect();
-        
-    }
+    /*public function reportComment() {
+     *   $db = $this->dbConnect();
+    *    
+    }*/
 
     public function showAllComments() {
         $comments = array();
         $db = $this->dbConnect();
         $q = $db->query('SELECT * FROM comments');
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-            $comments[] = new Comment($donnees);
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $comments[] = new Comment($data);
         }
         return $comments;
     }
-
+    
+    public function countComments() {
+        $db = $this->dbConnect();
+        $comments = $db->prepare('SELECT COUNT(comment) as counter FROM comments GROUP BY post_id');
+        $comments ->execute();
+        
+        $nbcomments = $comments->fetchAll();
+        return $nbcomments;
+        
+                
+    }
+                
     
     /* Ajouter : 
      * addComment
