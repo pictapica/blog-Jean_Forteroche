@@ -7,7 +7,7 @@ function listPosts()
 {
     $postManager =new PostManager(); //Création d'un objet
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    $lastpost =$postManager->getPostbyone();
+    $onepost =$postManager->getPostByOne();
     
     require('../app/view/frontend/listPostsView.php');
 }

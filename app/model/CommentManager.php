@@ -3,7 +3,12 @@
 require_once("../app/model/Manager.php");
 
 class CommentManager extends Manager {
-
+/**
+ * 
+ * @param type $postId
+ * @return type
+ * 
+ */
     public function getComments($postId) {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
@@ -11,7 +16,14 @@ class CommentManager extends Manager {
 
         return $comments;
     }
-
+/**
+ * 
+ * @param type $postId
+ * @param type $author
+ * @param type $comment
+ * @return type
+ * 
+ */
     public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
@@ -34,18 +46,25 @@ class CommentManager extends Manager {
         }
         return $comments;
     }
-    
-    public function countComments() {
+    /**
+     * 
+     * @return type
+     */
+    public function countComments($post_id) {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT COUNT(comment) as counter FROM comments GROUP BY post_id');
+        $comments = $db->prepare('SELECT *, COUNT(id) as counter FROM comments WHERE post_id = colname GROUP BY post_id');
         $comments ->execute();
         
         $nbcomments = $comments->fetchAll();
-        return $nbcomments;
-        
-                
+        foreach ($nbcomments as $comment)
+    {
+      $comment->setCommentDate(new \DateTime($comment->date()));
     }
-                
+  
+    return $comments;
+                  
+    }
+    
     
     /* Ajouter : 
      * addComment

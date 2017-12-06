@@ -1,6 +1,6 @@
 <?php
 
-// On appelle la classe permettant la connexion à la BDD
+
 require_once ("../app/model/Manager.php");
 
 class PostManager extends Manager {
@@ -28,10 +28,20 @@ class PostManager extends Manager {
         return $post;
     }
 
-    public function getPostbyone() {
+    /**
+     * 
+     * @return type
+     * 
+     */
+    public function getPostByOne() {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM post ORDER BY creation_date DESC LIMIT 10 OFFSET 1');
-        return $req;
+        $req = $db->query('SELECT id, title, user_id, content, ' .
+                'DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') AS creation_date_fr FROM post ORDER BY creation_date_fr DESC LIMIT 10 OFFSET 1')
+                or die('Impossible d\'effectuer la requête');
+        $req->execute(array());
+        $onepost = $req->fetchAll();
+
+        return $onepost;
     }
 
 }

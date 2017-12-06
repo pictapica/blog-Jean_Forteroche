@@ -19,9 +19,7 @@
                         que vous puissiez suivre ma progression.  
                         N'hésitez pas à commenter, je serais très heureux
                         d'avoir votre retour. Bonne lecture à vous.
-                        J'ai voulu ce blog comme une page blanche. Simple, sobre, 
-                        rien ne vous dérangera dans votre lecture à part peut-être la 
-                        frustration de ne pas pouvoir lire le chapitre suivant...</p>
+                       </p>
                 </div>
                 <div class="col-lg-1"></div>
             </header>
@@ -30,7 +28,7 @@
             <section class="blog-container">
                 <div class="row blog-card col-lg-4">
                     <?php
-                    while ($data = $posts->fetch()) {
+                    while ($data = $onepost->fetch()) {
                         ?>
 
                         <div class="title-content">
@@ -48,7 +46,7 @@
                         </div>
                         <div class="utility-info">
                             <ul class="utility-list">
-                                <li><span class="licon icon-com"></span><a href="#"><?= $data['nbcomments']?></a></li>
+                                <li><span class="licon icon-com"></span><a href="#"><?= $data['comments']?></a></li>
                                 <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
                             </ul>
                         </div>
