@@ -5,14 +5,14 @@
             <div class="pr-wrap">
                 <div class="pass-reset">
                     <label>
-                        Enter the email you signed up with</label>
+                        Entrez votre email</label>
                     <input type="email" placeholder="Email" />
                     <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
                 </div>
             </div>
             <div class="wrap">
                 <p class="form-title">
-                    Sign In</p>
+                    Connexion</p>
                 <form class="login">
                 <input type="text" placeholder="Username" />
                 <input type="password" placeholder="Password" />
@@ -36,8 +36,8 @@
             </div>
         </div>
     </div>
-    <div class="posted-by">Posted By: <a href="http://www.jquery2dotnet.com">Bhaumik Patel</a></div>
+    
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('template.php'); 

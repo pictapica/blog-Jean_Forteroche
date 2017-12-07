@@ -49,11 +49,8 @@ class CommentManager extends Manager {
         return $comments;
     }
 
-    /**
+    /*
      
-     * 
-     * 
-     */
     public function countComments() {
       
             $db = $this->dbConnect();

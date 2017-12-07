@@ -47,7 +47,7 @@
         <div class="col-lg-1"></div>
         <div class="comments col-lg-10">
             <h2>Ecrire un commentaires</h2><br/>
-            <form action="index2.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <form action="chapters.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                 <div class="form-group">
                     <div class="col-sm-10">
                         <input type="text" id="author" placeholder="Votre nom" name="author" class="form-control"/>
@@ -73,8 +73,3 @@
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
-
-
-</body>
-
-</html>
