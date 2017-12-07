@@ -55,16 +55,18 @@ class CommentManager extends Manager {
      * @return type
      * 
      */
-    public function countComments() {
-       
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT * COUNT(c.post_id) AS counter FROM comments c INNER JOIN comment p ON p.id = c.post_id');
-        
-        return $req;
+    /*public function countComments($id) {
+        try {
+            $db = $this->dbConnect();
+            $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments WHERE post_id = ' . $id . '');
+
+            return $nb_comments;
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+            return false;
+        }
     }
 
-    
-    
     /* Ajouter : 
      * addComment
      * deleteComment

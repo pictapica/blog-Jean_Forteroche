@@ -19,14 +19,14 @@ function addpost ($title, $content) {
     $postManager = new PostManager();
     $posts =$postManager->addPost($title, $content);
     
-    //header ('Location: episodes.php?action=
+    //header ('Location: chapter.php?action=
 }
 
 function deletePost ($postid) {
     $postManager = new PostManager();
     $postManager->detelePost($postid);
     
-    //header('Location: index.php?action= ')
+    //header('Location: chapter.php?action= ')
 }
 
 function updatePost() {
@@ -39,12 +39,12 @@ function updatePost() {
 /*function updateComment() {
  *  $commentmanager = new CommentManager();
  *  $commentmanager->updateComment($_POST['author'],$_POST['comment'],$_GET['id']);
- * header ('Location: episodes.php
+ * header ('Location: chapters.php
  */
 
 /*function deleteComment() {
  *  $commentmanager = new CommentManager();
  *  $comment = $commentManager->deleComment($_GET['id]);
  * 
- * header('Location : episodes.php?action=
+ * header('Location : chapters.php?action=
  */
