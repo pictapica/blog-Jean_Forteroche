@@ -33,7 +33,7 @@
 
                         <h1 class="text-white text-thin">Billet simple pour l'Alaska</h1>
                         <h4 class="text-white text-thin">Decouvrez son prochain livre  chapitre par chapitre</h4> <br/>  
-                        <a href="chapitres.php" class="btn btn-info" role="button">LIRE LE BLOG</a>
+                        <a href="chapters.php" class="btn btn-info" role="button">LIRE LE BLOG</a>
                     </div>
                 </div>
                 <div class="text-center" id="loadBannerVideoSpinner" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 4px; display: none; margin-top: 20px;">

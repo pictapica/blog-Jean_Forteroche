@@ -60,7 +60,7 @@ class User
          $this->_user_id = $userid;
     }
     
-    public function setFirstname($firstname) {
+    public function setFirstName($firstname) {
          $this->_firstname = $firstname;
     }
     

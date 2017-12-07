@@ -19,12 +19,38 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     </head>
-        
+
     <body>
+        <a name="haut" id="haut"></a>
         <?= $content ?>
+        <div class="cRetour"></div>
+        <script>
+            jQuery(document).ready(function () {
+                var duration = 500;
+                jQuery(window).scroll(function () {
+                    if (jQuery(this).scrollTop() > 100) {
+                        // Si un défillement de 100 pixels ou plus.
+                        // Ajoute le bouton
+                        jQuery('.cRetour').fadeIn(duration);
+                    } else {
+                        // Sinon enlève le bouton
+                        jQuery('.cRetour').fadeOut(duration);
+                    }
+                });
+
+                jQuery('.cRetour').click(function (event) {
+                    // Un clic provoque le retour en haut animé.
+                    event.preventDefault();
+                    jQuery('html, body').animate({scrollTop: 0}, duration);
+                    return false;
+                })
+            });
+        </script>
+
         
-       <!-- jQuery CDN -->
+        <!-- jQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <!-- Bootstrap Js CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -37,6 +63,13 @@
                 });
             });
         </script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                window.onscroll = function (ev) {
+                    document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
+                };
+            });
+        </script>
     </body>
 
 

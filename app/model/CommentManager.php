@@ -3,12 +3,13 @@
 require_once("../app/model/Manager.php");
 
 class CommentManager extends Manager {
-/**
- * 
- * @param type $postId
- * @return type
- * 
- */
+
+    /**
+     * 
+     * @param type $postId
+     * @return type
+     * 
+     */
     public function getComments($postId) {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
@@ -16,14 +17,15 @@ class CommentManager extends Manager {
 
         return $comments;
     }
-/**
- * 
- * @param type $postId
- * @param type $author
- * @param type $comment
- * @return type
- * 
- */
+
+    /**
+     * 
+     * @param type $postId
+     * @param type $author
+     * @param type $comment
+     * @return type
+     * 
+     */
     public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
@@ -32,10 +34,10 @@ class CommentManager extends Manager {
         return $affectedLines;
     }
 
-    /*public function reportComment() {
+    /* public function reportComment() {
      *   $db = $this->dbConnect();
-    *    
-    }*/
+     *    
+      } */
 
     public function showAllComments() {
         $comments = array();
@@ -46,28 +48,27 @@ class CommentManager extends Manager {
         }
         return $comments;
     }
+
     /**
+     
      * 
-     * @return type
+     * 
      */
-    public function countComments($post_id) {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT *, COUNT(id) as counter FROM comments WHERE post_id = colname GROUP BY post_id');
-        $comments ->execute();
-        
-        $nbcomments = $comments->fetchAll();
-        foreach ($nbcomments as $comment)
-    {
-      $comment->setCommentDate(new \DateTime($comment->date()));
+    public function countComments() {
+      
+            $db = $this->dbConnect();
+            $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments GROUP BY post_id');
+
+            while ($data = $nb_comments->fetch())
+            {
+                echo $data['counter'] .'<br/>';
+            }
+            $nb_comments->closeCursor();
+      
     }
-  
-    return $comments;
-                  
-    }
-    
-    
+
     /* Ajouter : 
-     * addComment
+     * 
      * deleteComment
      * updateComment
      * signalComment
