@@ -8,7 +8,7 @@ class PostManager extends Manager {
     // récupérer tous les billets
     public function getPosts() {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, user_id, left(content, 250) as extrait,'
+        $req = $db->query('SELECT id, title, user_id, left(content, 220) as extrait,'
                 . ' content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
                 . ' AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 6')
                 or die('Impossible d\'effectuer la requête');
@@ -30,38 +30,27 @@ class PostManager extends Manager {
 
     /**
      * 
-     * @return type
+     * @return \Post
      * 
      */
-    public function getPostByOne() {
+    public function Table_contents() {
+
+        $chapters = array();
         $db = $this->dbConnect();
-        
-        $posts = array();
-        
         $req = $db->query('SELECT id, title, user_id, content, ' .
                 'DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') AS creation_date_fr FROM post ORDER BY creation_date_fr DESC LIMIT 10 OFFSET 1')
                 or die('Impossible d\'effectuer la requête');
         while($data =$req->fetch(PDO::FETCH_ASSOC)) {
-            $posts[] = new Post($data);
+            $chapters[] = new Post($data);
         }
-        
 
-        return $posts;
+        return $chapters;
+        
     }
 
 }
-
-/*public function getPostbyone() {
-        $db = $this->dbConnect();
-       $req = $db->prepare('SELECT id, title, user_id, left(content, 250) as extrait, content
-            DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
-                . ' AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0,1') 
-                 or die('Impossible d\'effectuer la requête');
-        
-         return $req;
-    }
-     * 
- * 
+  
+/** 
  * Addpost
  * deletepost
  * updatepost ( faut-il

@@ -25,10 +25,11 @@
     <br /><br /><br />
 
     <section class="blog-container">
-
         <?php
         while ($data = $posts->fetch()) {
             ?>
+        <div class="row blog-card col-lg-4">
+        
             <div id="container">
                 <div class="post">
                     <div class="title-content">
@@ -54,11 +55,12 @@
                     <div class="color-overlay"></div>
                 </div>
             </div>
-            <?php
+         
+        </div>
+        <?php
         }
         $posts->closeCursor();
         ?>
-
     </section>
 
     
