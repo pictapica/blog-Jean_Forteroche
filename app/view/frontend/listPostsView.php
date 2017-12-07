@@ -28,7 +28,7 @@
             <section class="blog-container">
                 <div class="row blog-card col-lg-4">
                     <?php
-                    while ($data = $onepost->fetch()) {
+                    while ($data = $posts->fetch()) {
                         ?>
 
                         <div class="title-content">

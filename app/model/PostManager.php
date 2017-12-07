@@ -23,7 +23,7 @@ class PostManager extends Manager {
                 'DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') AS creation_date_fr '
                 . 'FROM post WHERE id = ?');
         $req->execute(array($postId));
-        $post = $req->fetch();
+        $post = $req->fetch(PDO::FETCH_ASSOC);
 
         return $post;
     }
@@ -35,13 +35,18 @@ class PostManager extends Manager {
      */
     public function getPostByOne() {
         $db = $this->dbConnect();
+        
+        $posts = array();
+        
         $req = $db->query('SELECT id, title, user_id, content, ' .
                 'DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') AS creation_date_fr FROM post ORDER BY creation_date_fr DESC LIMIT 10 OFFSET 1')
                 or die('Impossible d\'effectuer la requête');
-        $req->execute(array());
-        $onepost = $req->fetchAll();
+        while($data =$req->fetch(PDO::FETCH_ASSOC)) {
+            $posts[] = new Post($data);
+        }
+        
 
-        return $onepost;
+        return $posts;
     }
 
 }
