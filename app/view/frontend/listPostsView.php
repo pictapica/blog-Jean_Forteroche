@@ -28,7 +28,7 @@
         <?php
         while ($data = $posts->fetch()) {
             ?>
-        <div class="row blog-card col-lg-4">
+        <div class="row blog-card col-lg-12">
         
             <div id="container">
                 <div class="post">
@@ -55,17 +55,12 @@
                     <div class="color-overlay"></div>
                 </div>
             </div>
-         
         </div>
         <?php
         }
         $posts->closeCursor();
         ?>
     </section>
-
-    
-
-
 
 </div>
 <!-- jQuery CDN -->
