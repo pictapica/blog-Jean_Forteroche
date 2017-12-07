@@ -7,9 +7,9 @@ function listPosts()
 {
     $postManager =new PostManager(); //Création d'un objet
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    $post =$postManager->getPostByOne();
     
-    require('../app/view/frontend/listPostsView.php');
+    
+    include('../app/view/frontend/listPostsView.php');
 }
 
 function post()
@@ -34,11 +34,11 @@ function addComment($postId, $author, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: episodes.php?action=post&id=' . $postId);
+        header('Location: chapitres.php?action=post&id=' . $postId);
     }
 }
 // Reporte les commentaires signalés
 function reportComment($postId,$commentId)
 {
-    header('Location: episodes.php?action=comment&id=' .$postId,$commentId);
+    header('Location: chapitres.php?action=comment&id=' .$postId,$commentId);
 }

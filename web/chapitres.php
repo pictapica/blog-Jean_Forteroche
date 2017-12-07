@@ -37,7 +37,7 @@
                     <li>
                         <a href="index.php">ACCUEIL</a>
                         <a href="#">A PROPOS</a>
-                        <a href="episodes.php">EPISODES</a>
+                        <a href="chapitres.php">CHAPITRES</a>
                     </li>
                 </ul>
                 <br/>
