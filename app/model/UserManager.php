@@ -5,8 +5,10 @@ require_once ("model/Manager.php");//Pour se connecter à la base de données
 class UserManager extends Manager
 {
     /**
+     
      * 
-     * @param user $user
+     * @param type $user
+     * 
      */
     public function addUser ($user)
     {   

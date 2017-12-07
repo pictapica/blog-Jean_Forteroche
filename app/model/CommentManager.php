@@ -50,25 +50,25 @@ class CommentManager extends Manager {
     }
 
     /**
+     
      * 
-     * @param type $post_id
-     * @return type
      * 
      */
-    /*public function countComments($id) {
-        try {
+    public function countComments() {
+      
             $db = $this->dbConnect();
-            $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments WHERE post_id = ' . $id . '');
+            $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments GROUP BY post_id');
 
-            return $nb_comments;
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-            return false;
-        }
+            while ($data = $nb_comments->fetch())
+            {
+                echo $data['counter'] .'<br/>';
+            }
+            $nb_comments->closeCursor();
+      
     }
 
     /* Ajouter : 
-     * addComment
+     * 
      * deleteComment
      * updateComment
      * signalComment

@@ -8,7 +8,8 @@ function listPosts() {
     $CommentManager = new CommentManager();
 
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    //$nb_comments = $CommentManager->countComments();
+    var_dump ($nb_comments); 
+    $nb_comments = $CommentManager->countComments();
 
     include('../app/view/frontend/listPostsView.php');
 }
