@@ -22,6 +22,16 @@ function post()
     require('../app/view/frontend/postView.php');
 }
 
+function countComments() {
+    
+    $postManager = new PostManager();
+    $commentManager =new CommentManager();
+    $counter = $commentManager->countComments();
+    
+    include('../app/view/frontend/listPostsView.php');
+}
+
+
 function addComment($postId, $author, $comment)
 {
     $commentManager =new CommentManager();
