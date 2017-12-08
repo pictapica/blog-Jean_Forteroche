@@ -633,7 +633,9 @@ h3:after {
     }
 }
 
-
+.list-group-item.active {
+    background: #000;
+}
 
 /* ---------------------------------------------------
     VIDEO ACCUEIL
