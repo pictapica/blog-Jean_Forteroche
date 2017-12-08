@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="web/bootstrap/css/bootstrap-grid.min.css">
         <link rel="stylesheet" href="web/bootstrap/css/bootstrap-theme.css">
         <link rel="stylesheet" href="web/bootstrap/css/bootstrap-theme.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="web/bootstrap/css/custom.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,6 +21,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        
     </head>
 
     <body>

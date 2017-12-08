@@ -34,8 +34,12 @@
             <?php
             while ($comment = $comments->fetch()) {
                 ?>
-                <p><strong><?= htmlspecialchars($comment['author']) ?></strong> -  Le <?= $comment['comment_date_fr'] ?></p>
-                <p>&nbsp&nbsp&nbsp-&nbsp<?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br />
+                <p><strong><?= htmlspecialchars($comment['author']) ?></strong> -      
+                <?= nl2br(htmlspecialchars($comment['comment']))
+                ?><br /></p>
+                <p><span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                   <a href="#" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> - 
+                Le <?= $comment['comment_date_fr'] ?></p><br />
                 <?php
             }
             ?>
@@ -47,15 +51,18 @@
         <div class="col-lg-1"></div>
         <div class="comments col-lg-10">
             <h2>Ecrire un commentaires</h2><br/>
-            <form action="chapters.php?action=addComment&amp;id=<?= $post['id'] ?>#comments" method="post">
+            <form action="chapters.php?action=addComment&amp;id=<?= $post['id'] 
+                    ?>#comments" method="post">
                 <div class="form-group">
                     <div class="col-sm-10">
-                        <input type="text" id="author" placeholder="Votre nom" name="author" class="form-control"/>
+                        <input type="text" id="author" placeholder="Votre nom" 
+                               name="author" class="form-control"/>
                     </div>
                 </div><br /><br /><br />
                 <div class="form-group">
                     <div class="col-sm-10">
-                        <textarea id="comment" name="comment" placeholder="Votre messsage" rows="6" class="form-control"></textarea><br>
+                        <textarea id="comment" name="comment" placeholder=
+                                  "Votre messsage" rows="6" class="form-control"></textarea><br>
                     </div>
                 </div>
                 <div class="form-group">

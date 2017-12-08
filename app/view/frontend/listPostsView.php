@@ -1,8 +1,10 @@
 
+
+
 <?php $title = 'Billet simple pour l\'Alaska'; ?>
 
 
-
+<?php ob_start(); ?>
 <div class="container-fluid">
     <header class="row">
         <div class="col-lg-1">
@@ -28,53 +30,43 @@
         <?php
         while ($data = $posts->fetch()) {
             ?>
-        <div class="row blog-card col-lg-12">
-        
-            <div id="container">
-                <div class="post">
-                    <div class="title-content">
-                        <h3>
-                            <?= htmlspecialchars($data['title']) ?>
+            <div class="row blog-card col-lg-12">
 
-                        </h3>
+                <div id="container">
+                    <div class="post">
+                        <div class="title-content">
+                            <h3>
+                                <?= htmlspecialchars($data['title']) ?>
+
+                            </h3>
+                        </div>
+                        <div class="card-info">
+                            <p>
+                                <?= nl2br(htmlspecialchars($data['extrait'])) ?>...
+                                <br /><br /><br />
+                            </p>
+                            <em><a href="chapters.php?action=post&amp;id=<?= $data['id']
+                                ?>">Lire la suite<span class="licon icon-black"></span></a></em>
+                        </div>
+                        <div class="utility-info">
+                            <ul class="utility-list">
+                                <li><span class="licon icon-com"></span>
+                                    <a href="chapters.php?action=post&amp;id=<?= $data['id'] ?>#comments">Commentaires</a></li>
+                                <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
+                            </ul>
+                        </div>
+                        <div class="gradient-overlay"></div>
+                        <div class="color-overlay"></div>
                     </div>
-                    <div class="card-info">
-                        <p>
-                            <?= nl2br(htmlspecialchars($data['extrait'])) ?>...
-                            <br /><br /><br />
-                        </p>
-                        <em><a href="chapters.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite<span class="licon icon-black"></span></a></em>
-                    </div>
-                    <div class="utility-info">
-                        <ul class="utility-list">
-                            <li><span class="licon icon-com"></span><a href="chapters.php?action=post&amp;id=<?= $data['id'] ?>#comments">Commentaires</a></li>
-                            <li><span class="licon icon-dat"></span><em> <?= $data['creation_date_fr'] ?></em></li>
-                        </ul>
-                    </div>
-                    <div class="gradient-overlay"></div>
-                    <div class="color-overlay"></div>
                 </div>
             </div>
-        </div>
-        <?php
+            <?php
         }
         $posts->closeCursor();
         ?>
     </section>
 
 </div>
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- Bootstrap Js CDN -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-    });
-</script> 
+<?php $content = ob_get_clean(); ?>
 
-</body>
-</html>
+<?php require('template.php'); ?>
