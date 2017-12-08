@@ -41,7 +41,7 @@
                     </li>
                 </ul>
                 <br/>
-                <a href="../app/view/frontend/connexion.php">Administration</a>
+                <a href="../app/view/frontend/login.php" class="login_link">Administration</a>
             </nav>
 
             <!-- Page Content Holder -->
