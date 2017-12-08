@@ -691,7 +691,7 @@ h3:after {
     .text-white {
         color : #fff !important;
     }
-    .btn btn-info {
+    .btn btn-warning btn-lg {
         background-image: linear-gradient(to bottom,#8e7c49 0,#fff 100%);
         background-repeat: repeat-x;
         background-color: #8e7c49;
