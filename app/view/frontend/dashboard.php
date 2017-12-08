@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="btn btn-group navbar-btn pull-right">
-                                    <a class="btn btn-info navbar-btn" href="#">deconnexion</a>
+                                    <a class="btn btn-info navbar-btn" href="#"><span class="glyphicon glyphicon-pencil"></span>&nbsp;</a>
                                     <a class="btn btn-info navbar-btn" href="#">2</a>
                                     <a class="btn btn-info navbar-btn" href="#">3</a>
                                 </div>

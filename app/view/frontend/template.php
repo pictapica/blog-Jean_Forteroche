@@ -63,21 +63,7 @@
         <!-- Bootstrap Js CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').toggleClass('active');
-                    $(this).toggleClass('active');
-                });
-            });
-        </script> 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                window.onscroll = function (ev) {
-                    document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
-                };
-            });
-        </script>
+        
 
     </body>
 

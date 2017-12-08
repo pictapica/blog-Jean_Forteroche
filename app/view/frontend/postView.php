@@ -35,7 +35,7 @@
                     ?><br /></p>
                 <p><span class="fa fa-exclamation-circle" aria-hidden="true"></span>
                     <a href="#" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> - 
-                    Le <?= $comment['comment_date_fr'] ?></p><br />
+                    <FONT size="2px"> Le <?= $comment['comment_date_fr'] ?></FONT></p><br />
                 <?php
             }
             ?>
