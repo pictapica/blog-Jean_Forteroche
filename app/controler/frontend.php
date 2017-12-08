@@ -3,6 +3,7 @@
 require_once('../app/model/PostManager.php');
 require_once('../app/model/CommentManager.php');
 
+
 function listPosts() {
     $postManager = new PostManager(); //Création d'un objet
     $CommentManager = new CommentManager();
@@ -40,3 +41,5 @@ function addComment($postId, $author, $comment) {
 function reportComment($postId, $commentId) {
     header('Location: chapters.php?action=comment&id=' . $postId, $commentId);
 }
+
+
