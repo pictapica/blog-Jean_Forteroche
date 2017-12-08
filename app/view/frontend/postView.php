@@ -34,8 +34,8 @@
             <?php
             while ($comment = $comments->fetch()) {
                 ?>
-                <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-                <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br />
+                <p><strong><?= htmlspecialchars($comment['author']) ?></strong> -  Le <?= $comment['comment_date_fr'] ?></p>
+                <p>&nbsp&nbsp&nbsp-&nbsp<?= nl2br(htmlspecialchars($comment['comment'])) ?></p><br />
                 <?php
             }
             ?>
@@ -47,7 +47,7 @@
         <div class="col-lg-1"></div>
         <div class="comments col-lg-10">
             <h2>Ecrire un commentaires</h2><br/>
-            <form action="chapters.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <form action="chapters.php?action=addComment&amp;id=<?= $post['id'] ?>#comments" method="post">
                 <div class="form-group">
                     <div class="col-sm-10">
                         <input type="text" id="author" placeholder="Votre nom" name="author" class="form-control"/>
