@@ -1,28 +1,27 @@
 <?php
-
+session_start();
 
 include_once '../model/userManager.php';
 $userManager = new UserManager();
-
-
+if (!empty($_POST)){
     if (empty($_POST['pseudo']) OR empty($_POST['password'])) {
 
         header('Location:../view/frontend/login.php?message=no_data');
         exit();
     }
     if (empty($_POST['pseudo'])) {
-        header('Location:../view/frontend/login.php?message=bad_pseudo');
+        header('Location:../view/frontend/login.php?message=no_pseudo');
         exit();
-    } elseif (!isset($_POST['password'])) {
+    } elseif (empty($_POST['password'])) {
         header('Location:../view/frontend/login.php?message=no_password');
         exit();
     } else {
 
         $pseudo = htmlspecialchars($_POST['pseudo']);
-        $password = sha1($_POST['password']);
+        $password = sha512($_POST['password']);
 
         // Hachage du mot de passe
-        $password_hash = sha1($_POST['password']);
+        $password_hash = sha512($_POST['password']);
 
         if ($password_hash == $password) {
             //vérification des identifiants 
@@ -37,4 +36,4 @@ $userManager = new UserManager();
             }
         }
     }
-
+}

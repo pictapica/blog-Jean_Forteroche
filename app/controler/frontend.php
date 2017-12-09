@@ -39,7 +39,24 @@ function addComment($postId, $author, $comment) {
 
 // Reporte les commentaires signalés
 function reportComment($postId, $commentId) {
-    header('Location: chapters.php?action=comment&id=' . $postId, $commentId);
-}
+    
 
+if (isset($signal)) {
+                $moderation = new Moderation([
+                                                 'message'     => 'signale',
+                                                 'commentsid'  => $comm,
+                                                 'userid'      => $somebody,
+        ]);
+                if ($CommentManager->hasModeration($comm) == FALSE) {
+                    $ModerationManager->addModeration($moderation);
+                    $ModerationManager->updateSignaled($comm, $somebody);
+                } else {
+                    $ModerationManager->updateSignaled($comm, $somebody);
+                    $mess = setFlash("Attention !", "vous avez déjà signalé ce commentaire", "danger");
+                }
+            }
+        
+        
+    header('Location: chapters.php?action=comment&id=' . $postId, $commentId);
+    }
 
