@@ -64,8 +64,8 @@
                                     <a class="btn btn-info navbar-btn" href="#">3</a>
                                 </div>
                             </div>
-                        
-                            
+
+
                         </div>
                     </div>
                 </nav>
@@ -78,10 +78,6 @@
                     <div class="panel-footer">Pied de panneau</div>
                 </div>
 
-                <h1>TinyMCE Quick Start Guide</h1>
-                <form method="post">
-                    <textarea id="mytextarea">Hello, World!</textarea>
-                </form>
             </div>
         </div>
 
