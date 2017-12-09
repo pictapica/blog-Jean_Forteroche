@@ -2,29 +2,38 @@
 
 session_start();
 include_once '../model/userManager.php';
+$user = new UserManager();
 
-if (isset($_POST['connect'])) {
+
     if (!isset($_POST['pseudo']) OR ! isset($_POST['password'])) {
 
-        header('refresh: 2; url=../view/frontend/login.php?message=no_data');
+        header('Location:../view/frontend/login.php?message=no_data');
         exit();
     }
     if (!isset($_POST['pseudo'])) {
-        header('refresh: 2; url=../view/frontend/login.php?message=bad_pseudo');
+        header('Location:../view/frontend/login.php?message=bad_pseudo');
         exit();
     } elseif (!isset($_POST['password'])) {
-        header('refresh: 2; url=../view/frontend/login.php?message=no_password');
+        header('Location:../view/frontend/login.php?message=no_password');
         exit();
     } else {
-        //Sécurisation des données
+
         $pseudo = htmlspecialchars($_POST['pseudo']);
-        $pass = sha1($_POST['pass']);
+        $password = sha512($_POST['password']);
 
         // Hachage du mot de passe
-        $pass_hache = sha1($_POST['pass']);
+        $password_hache = sha512($_POST['password']);
 
-        if ($pass_hache == $pass) {
-            
+        if ($password_hache == $password) {
+            //vérification des identifiants 
+            $user = $userManager->connect($_POST['pseudo'], $_POST['password']);
+            if (empty($user)) {
+                echo'Mauvais identifiant ou mot de passe !';
+            } else {
+                $_SESSION['pseudo'] = $resultat['pseudo'];
+                $_SESSION['email'] = $resultat['email'];
+                header('Location:../view/frontend/dashboard.php');
+            }
         }
     }
-}
+
