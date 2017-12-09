@@ -27,10 +27,11 @@
     <br /><br /><br />
 
     <section class="blog-container">
+        <div class="row clo-lg-2"></div>
         <?php
         while ($data = $posts->fetch()) {
             ?>
-            <div class="row blog-card col-lg-12">
+            <div class="blog-card col-lg-10">
 
                 <div id="container">
                     <div class="post">
@@ -60,6 +61,7 @@
                     </div>
                 </div>
             </div>
+
             <?php
         }
         $posts->closeCursor();
