@@ -180,7 +180,7 @@ a, a:hover, a:focus {
 }
 #sidebar ul li a:hover {
     color: #fff;
-    background: #8e7c49;
+    background: #5cbdce;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
@@ -209,7 +209,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #8e7c49;
+    background: #5cbdce;
 }
 
 ul.CTAs {
@@ -242,10 +242,85 @@ a.login_link {
 
 a.login_link:hover{
     text-decoration: underline;
-    color: #8e7c49;
+    color: #5cbdce;
 }
 
+/* ---------------------------------------------------
+   DASHBOARD
+----------------------------------------------------- */
+.btn-custom {
+    background-color: hsl(195, 60%, 35%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7", endColorstr="#23748e");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7), to(#23748e));
+    background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
+    background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7), color-stop(100%, #23748e));
+    background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
+    background-image: -o-linear-gradient(top, #2d95b7, #23748e);
+    background-image: linear-gradient(#2d95b7, #23748e);
+    border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+    -webkit-font-smoothing: antialiased;
+    margin-left: 50px;
+}
 
+.btn-custom2 {
+    background-color: hsl(74, 39%, 75%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d8e1bb", endColorstr="#ccd8a6");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#d8e1bb), to(#ccd8a6));
+    background-image: -moz-linear-gradient(top, #d8e1bb, #ccd8a6);
+    background-image: -ms-linear-gradient(top, #d8e1bb, #ccd8a6);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d8e1bb), color-stop(100%, #ccd8a6));
+    background-image: -webkit-linear-gradient(top, #d8e1bb, #ccd8a6);
+    background-image: -o-linear-gradient(top, #d8e1bb, #ccd8a6);
+    background-image: linear-gradient(#d8e1bb, #ccd8a6);
+    border-color: #ccd8a6 #ccd8a6 hsl(74, 39%, 73.5%);
+    color: #333 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.09);
+    -webkit-font-smoothing: antialiased;
+    height: 200px;
+    width: 200px;
+}
+
+.btn-custom3 {
+    background-color: hsl(163, 39%, 75%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbe1d6", endColorstr="#a6d8ca");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#bbe1d6), to(#a6d8ca));
+    background-image: -moz-linear-gradient(top, #bbe1d6, #a6d8ca);
+    background-image: -ms-linear-gradient(top, #bbe1d6, #a6d8ca);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bbe1d6), color-stop(100%, #a6d8ca));
+    background-image: -webkit-linear-gradient(top, #bbe1d6, #a6d8ca);
+    background-image: -o-linear-gradient(top, #bbe1d6, #a6d8ca);
+    background-image: linear-gradient(#bbe1d6, #a6d8ca);
+    border-color: #a6d8ca #a6d8ca hsl(163, 39%, 73.5%);
+    color: #333 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.09);
+    -webkit-font-smoothing: antialiased;
+    height: 200px;
+    width: 200px;
+}
+.btn-custom4 {
+    background-color: hsl(42, 39%, 75%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e1d6bb", endColorstr="#d8c9a6");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#e1d6bb), to(#d8c9a6));
+    background-image: -moz-linear-gradient(top, #e1d6bb, #d8c9a6);
+    background-image: -ms-linear-gradient(top, #e1d6bb, #d8c9a6);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e1d6bb), color-stop(100%, #d8c9a6));
+    background-image: -webkit-linear-gradient(top, #e1d6bb, #d8c9a6);
+    background-image: -o-linear-gradient(top, #e1d6bb, #d8c9a6);
+    background-image: linear-gradient(#e1d6bb, #d8c9a6);
+    border-color: #d8c9a6 #d8c9a6 hsl(42, 39%, 73.5%);
+    color: #333 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.09);
+    -webkit-font-smoothing: antialiased;
+    height: 200px;
+    width:  200px;
+}
 /* ---------------------------------------------------
     BOUTON RETOUR HAUT 
 ----------------------------------------------------- */
@@ -509,7 +584,7 @@ h3:after {
     font-size:0.8em
 }
 .card-info a:hover{
-    background: #8e7c49;
+    background: #5cbdce;
     color:#fff;
 }
 .card-info a:hover span{
@@ -693,49 +768,50 @@ h3:after {
     width: 100%;
     text-align: center;
     color: #fff;
+}
+.text-thin {
+    font-weight: 100px;
+}
 
-    .text-thin {
-        font-weight: 100px;
+.text-white {
+    color : #fff !important;
+}
+.btn btn-warning btn-lg {
+    background-image: linear-gradient(to bottom,#5cbdce 0,#fff 100%);
+    background-repeat: repeat-x;
+    background-color: #5cbdce;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(90deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
     }
 
-    .text-white {
-        color : #fff !important;
-    }
-    .btn btn-warning btn-lg {
-        background-image: linear-gradient(to bottom,#8e7c49 0,#fff 100%);
-        background-repeat: repeat-x;
-        background-color: #8e7c49;
-    }
-    /* ---------------------------------------------------
-        MEDIAQUERIES
-    ----------------------------------------------------- */
-    @media (max-width: 768px) {
-        #sidebar {
-            margin-left: -250px;
-            transform: rotateY(90deg);
-        }
-        #sidebar.active {
-            margin-left: 0;
-            transform: none;
-        }
-        #sidebarCollapse span:first-of-type,
-            #sidebarCollapse span:nth-of-type(2),
-            #sidebarCollapse span:last-of-type {
-            transform: none;
-            opacity: 1;
-            margin: 5px auto;
-        }
-        #sidebarCollapse.active span {
-            margin: 0 auto;
-        }
-        #sidebarCollapse.active span:first-of-type {
-            transform: rotate(45deg) translate(2px, 2px);
-        }
-        #sidebarCollapse.active span:nth-of-type(2) {
-            opacity: 0;
-        }
-        #sidebarCollapse.active span:last-of-type {
-            transform: rotate(-45deg) translate(1px, -1px);
-        }
-
-    }
+}

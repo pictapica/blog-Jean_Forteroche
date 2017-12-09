@@ -27,29 +27,7 @@ class PostManager extends Manager {
 
         return $post;
     }
-
-    /**
-     * 
-     * @return \Post
-     * 
-     */
-    public function Table_contents() {
-
-        $chapters = array();
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, user_id, content, ' .
-                'DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') AS creation_date_fr FROM post ORDER BY creation_date_fr DESC LIMIT 10 OFFSET 1')
-                or die('Impossible d\'effectuer la requête');
-        while($data =$req->fetch(PDO::FETCH_ASSOC)) {
-            $chapters[] = new Post($data);
-        }
-
-        return $chapters;
-        
-    }
-
 }
-  
 /** 
  * Addpost
  * deletepost

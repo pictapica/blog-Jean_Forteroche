@@ -1,5 +1,6 @@
-
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,9 +32,7 @@
                     <img src="images/logowhite.png" width="250" alt="Jean Forteroche">         
                 </div>
                 <h4>Billet simple pour l'Alaska</h4><br/>
-
                 <ul class="list-unstyled components">
-
                     <li>
                         <a href="index.php">ACCUEIL</a>
                         <a href="#">A PROPOS</a>
@@ -43,10 +42,8 @@
                 <br/>
                 <a href="../app/view/frontend/login.php" class="login_link">Administration</a>
             </nav>
-
             <!-- Page Content Holder -->
             <div id="content">
-
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
 
@@ -59,10 +56,8 @@
                         </div>
                     </div>
                 </nav>
-
                 <?php
                 require('../app/controler/frontend.php');
-
                 try { // On essaie de faire des choses
                     if (isset($_GET['action'])) {
                         if ($_GET['action'] == 'listPosts') {
@@ -96,7 +91,6 @@
                 ?>     
             </div>         
         </div>
-
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <!-- Bootstrap Js CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

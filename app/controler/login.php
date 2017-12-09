@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 include_once '../model/userManager.php';
 $userManager = new UserManager();
 
@@ -27,13 +27,13 @@ $userManager = new UserManager();
         if ($password_hash == $password) {
             //vérification des identifiants 
             $result = $userManager->connect($_POST['pseudo'], $_POST['password']);
-            if (!empty($result)) {
+            if (!isset($result)) {
                 header('Refresh:2, url=../view/frontend/login.php?message=internal_error');
                 echo'Mauvais identifiant ou mot de passe !';
             } else {
                 $_SESSION['pseudo'] = $result['pseudo'];
                 $_SESSION['password'] = $result['password'];
-                header('Location:../view/frontend/dashboard.php');
+                header('Location:../view/frontend/admin.php');
             }
         }
     }
