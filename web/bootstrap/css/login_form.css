@@ -140,6 +140,26 @@ a.home_link{
     font-size: 0.9em;
     padding-top: 13px;
 }
+
+.btn-connect{
+    font-family: 'Kozuka Gothic Pro EL','Verdana', sans-serif;
+    text-decoration: none;
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 9px auto;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(142,124,73,0.3);
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
 #remember-container{
     position: relative;
     margin: -5px 20px;
@@ -220,4 +240,12 @@ a.home_link{
 
 .orange-btn{
     background: rgba(87,198,255,.5);
+}
+
+.btn {
+   font-family: 'Kozuka Gothic Pro EL','Verdana', sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    background: rgba(142,124,73,0.3); 
+    margin: 9px auto;
 }

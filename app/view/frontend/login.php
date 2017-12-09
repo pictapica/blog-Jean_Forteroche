@@ -40,10 +40,10 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
             <h1>Connexion</h1>
             
 
-            <form action="dashboard.php">
+            <form action="../../../app/controler/login.php" method="post">
                 <input type="text" name="pseudo" placeholder="Pseudo">
                 <input type="password" name="pass" placeholder="Mot de Passe">
-                <a href="dashboard.php">Connexion</a>
+                <input type="submit" name="connect" value="Connexion" class="btn-connect">
                 <div>
                     <a class="home_link" href ="../../../web/index.php">Retour à l'accueil du site</a>
                 </div>

@@ -42,4 +42,6 @@ class UserManager extends Manager
         ));
         return $resultat = $req->fetch();
     }
+    
+    
 }
