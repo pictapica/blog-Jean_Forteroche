@@ -42,7 +42,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
 
             <form action="../../../app/controler/login.php" method="post">
                 <input type="text" name="pseudo" placeholder="Pseudo">
-                <input type="password" name="pass" placeholder="Mot de Passe">
+                <input type="password" name="password" placeholder="Mot de Passe">
                 <input type="submit" name="connect" value="Connexion" class="btn-connect">
                 <div>
                     <a class="home_link" href ="../../../web/index.php">Retour à l'accueil du site</a>
