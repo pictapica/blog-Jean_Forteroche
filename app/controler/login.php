@@ -26,4 +26,5 @@ if (isset($_POST['connect'])) {
         if ($pass_hache == $pass) {
             
         }
-    }    
+    }
+}
