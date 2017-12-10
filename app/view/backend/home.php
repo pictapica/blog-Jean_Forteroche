@@ -12,7 +12,7 @@
 <div class="row col-lg-12">
     <div class="col-lg-3"></div>
     <div class="col-lg-2">
-        <a href="editPost.php" class="btn btn-custom2 btn-lg" role="button" title="Lien 1">
+        <a href="editPost.php" class="btn btn-custom2 btn-lg" role="button" >
             <span class="glyphicon glyphicon-pencil"></span><br><br>Ecrire un billet</a>
     </div>
     <div class="col-lg-2">

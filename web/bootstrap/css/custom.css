@@ -126,6 +126,17 @@ a, a:hover, a:focus {
 [class*="col-"] {
     text-align: center;
 }
+
+.footer{
+    height: 30px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -322,6 +333,8 @@ a.login_link:hover{
     height: 200px;
     width:  200px;
 }
+
+
 /* ---------------------------------------------------
     BOUTON RETOUR HAUT 
 ----------------------------------------------------- */
