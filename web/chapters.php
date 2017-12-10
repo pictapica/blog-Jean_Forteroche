@@ -40,7 +40,7 @@ session_start();
                     </li>
                 </ul>
                 <br/>
-                <a href="../app/view/frontend/login.php" class="login_link">Administration</a>
+                <a href="../app/view/frontend/login.php" class="login_link">Administration</a><br><br><br>
             </nav>
             <!-- Page Content Holder -->
             <div id="content">
