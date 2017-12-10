@@ -1,9 +1,4 @@
-
-
-
 <?php $title = 'Billet simple pour l\'Alaska'; ?>
-
-
 <?php ob_start(); ?>
 <div class="container-fluid">
     <header class="row">
@@ -25,14 +20,12 @@
         <div class="col-lg-1"></div>
     </header>
     <br /><br /><br />
-
     <section class="blog-container">
         <div class="row clo-lg-2"></div>
         <?php
         while ($data = $posts->fetch()) {
             ?>
             <div class="blog-card col-lg-10">
-
                 <div id="container">
                     <div class="post">
                         <div class="title-content">
@@ -61,13 +54,11 @@
                     </div>
                 </div>
             </div>
-
             <?php
         }
         $posts->closeCursor();
         ?>
     </section>
-
 </div>
 <?php $content = ob_get_clean(); ?>
 

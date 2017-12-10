@@ -1,6 +1,5 @@
 <?php
 
-
 require_once ("../app/model/Manager.php");
 
 class PostManager extends Manager {
@@ -27,9 +26,35 @@ class PostManager extends Manager {
 
         return $post;
     }
+
+    public function addPost(Post $post) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO post(title, user_id, content, creation_date, update_date) '
+                . 'VALUES(:title, 1, :content, NULL, creation_date, update_date ) ');
+        $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
+        $req->bindValue(':content', $post->getContent(), PDO::PARAM_STR);
+        $req->bindValue(':creation_date', $post->getCreationDate(), PDO::PARAM_STR);
+        $req->bindValue(':update_date', $post->getUpdateDate(), PDO::PARAM_STR);
+
+        $req->execute();
+
+        $post->hydrate(['id' => $this->$db->lastInsert()]);
+    }
+
+    public function updatePost(post $post, $getId) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE post SET title = :title, user_id = 1, content=:content,'
+                . 'update_date = :update_date WHERE id = ' . $getId);
+        $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
+        $req->bindValue(':content', $post->getContent(), PDO::PARAM_STR);
+        $req->bindValue(':update_date', $post->getUpdateDate(), PDO::PARAM_STR);
+
+        $req->execute();
+    }
+
+    public function deleteChapter($getId) {
+        $db = $this->dbConnect();
+        $req = $db->exec('DELETE FROM post WHERE id=' . $getId);
+    }
+
 }
-/** 
- * Addpost
- * deletepost
- * updatepost ( faut-il
-     */

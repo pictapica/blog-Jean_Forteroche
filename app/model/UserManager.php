@@ -16,7 +16,7 @@ class UserManager extends Manager
         $req = $db->prepare('SELECT * FROM user WHERE pseudo = :pseudo AND password = :password');
         $req->execute(array(
             'pseudo' => $pseudo,
-            'password' => hash ("sha512", $password),  
+            'password' => hash ("sha1", $password),  
         ));
         return $result = $req->fetch();
         

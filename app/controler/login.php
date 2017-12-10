@@ -18,10 +18,10 @@ if (!empty($_POST)){
     } else {
 
         $pseudo = htmlspecialchars($_POST['pseudo']);
-        $password = sha512($_POST['password']);
+        $password = sha1($_POST['password']);
 
         // Hachage du mot de passe
-        $password_hash = sha512($_POST['password']);
+        $password_hash = sha1($_POST['password']);
 
         if ($password_hash == $password) {
             //vérification des identifiants 
@@ -32,7 +32,7 @@ if (!empty($_POST)){
             } else {
                 $_SESSION['pseudo'] = $result['pseudo'];
                 $_SESSION['password'] = $result['password'];
-                header('Location:../view/frontend/admin.php');
+                header('Location:../view/backend/admin.php');
             }
         }
     }

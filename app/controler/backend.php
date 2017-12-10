@@ -4,7 +4,6 @@ require_once('../app/model/PostManager.php');
 require_once('../app/model/CommentManager.php');
 require_once('../app/model/userManager.php');
 
-
 //formulaire de connexion
 function login()
 {
