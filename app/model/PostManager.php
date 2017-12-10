@@ -29,7 +29,7 @@ class PostManager extends Manager {
 
     public function addPost(Post $post) {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO post(title, user_id, content, creation_date, update_date) '
+        $req = $db->prepare('INSERT INTO post(title, content, creation_date, update_date) '
                 . 'VALUES(:title, 1, :content, NULL, creation_date, update_date ) ');
         $req->execute(array(
         'title'=> $post->getTitle(), PDO::PARAM_STR,

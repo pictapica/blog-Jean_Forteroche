@@ -4,9 +4,9 @@ require_once('../app/model/PostManager.php');
 require_once('../app/model/CommentManager.php');
 require_once('../app/model/userManager.php');
 
-//formulaire de connexion
+
 function login(){
-    require('../view/backend/connexion.php');
+    require('../view/backend/login.php');
 }
 
 function showdashboard() {
@@ -17,14 +17,14 @@ function addPost ($title, $content) {
     $postManager = new PostManager();
     $posts =$postManager->addPost($title, $content);
     
-    //header ('Location: admin.php?action=
+    header ('Location: editPost.php?action=');
 }
 
 function deletePost ($postid) {
     $postManager = new PostManager();
     $postManager->detelePost($postid);
     
-    header('Location : admin.php?action=deletePost');
+    header('Location : admin.php?action=');
 }
 
 function updatePost() {
