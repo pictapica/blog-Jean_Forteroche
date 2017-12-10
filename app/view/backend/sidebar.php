@@ -5,26 +5,37 @@
     <!-- Sidebar Links -->
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="index.php" data-toggle="collapse"  aria-expanded="false">
+            <a href="admin.php" >
+                <i class="glyphicon glyphicon-home">&nbsp</i>Accueil</a>
+        </li>
+        <li>
+            <a href="#homeSubmenu" data-toggle="collapse"  aria-expanded="false">
                 <i class="glyphicon glyphicon-book">&nbsp</i>Billets</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li><a href="index.php">Tous les billets</a></li>
-                <li><a href="#">Ajouter</a></li>
+                <li><a href="#">Nouveau billet</a></li>
             </ul>
         </li>
         <li>
-            <a href="#" class="list-group-item active" data-toggle="collapse">
+            <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false">
                 <i class="glyphicon glyphicon-picture">&nbsp</i>Médias</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li><a href="#">Tous les billets</a></li>
-                <li><a href="#">Ajouter</a></li>
+                <li><a href="#">Toutes les images</a></li>
+                <li><a href="#">Ajouter une image</a></li>
             </ul>
         </li>
         <li>
-            <a href="chapters.php" class="list-group-item active">
+            <a href="#page2Submenu"  data-toggle="collapse" aria-expanded="false">
                 <i class="glyphicon glyphicon-comment">&nbsp</i>Commentaires</a>
-            <a href="chapters.php" class="list-group-item active">
+            <ul class="collapse list-unstyled" id="page2Submenu">
+                <li><a href="#">Nouveaux commentaires</a></li>
+                <li><a href="#">Tous les commentaires</a></li>
+            </ul>
+            <a href="#page3Submenu"  data-toggle="collapse" aria-expanded="false">
                 <i class="glyphicon glyphicon-exclamation-sign">&nbsp</i>Modération</a>
+            <ul class="collapse list-unstyled" id="page3Submenu">
+                <li><a href="#">Voir les signalements</a></li>
+            </ul>
         </li>
     </ul>
 </nav>

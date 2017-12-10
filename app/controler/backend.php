@@ -5,27 +5,26 @@ require_once('../app/model/CommentManager.php');
 require_once('../app/model/userManager.php');
 
 //formulaire de connexion
-function login()
-{
-    require('view/backend/connexion.php');
+function login(){
+    require('../view/backend/connexion.php');
 }
 
 function showdashboard() {
     
 }
 
-function addpost ($title, $content) {
+function addPost ($title, $content) {
     $postManager = new PostManager();
     $posts =$postManager->addPost($title, $content);
     
-    //header ('Location: chapter.php?action=
+    //header ('Location: admin.php?action=
 }
 
 function deletePost ($postid) {
     $postManager = new PostManager();
     $postManager->detelePost($postid);
     
-    //header('Location: chapter.php?action= ')
+    header('Location : admin.php?action=deletePost');
 }
 
 function updatePost() {
@@ -35,15 +34,40 @@ function updatePost() {
     //header(...
 }
 
-/*function updateComment() {
- *  $commentmanager = new CommentManager();
- *  $commentmanager->updateComment($_POST['author'],$_POST['comment'],$_GET['id']);
- * header ('Location: chapters.php
- */
+function updateComment() {
+   $commentmanager = new CommentManager();
+  $commentmanager->updateComment($_POST['author'],$_POST['comment'],$_GET['id']);
+  header ('Location: chapters.php');
+}
 
-/*function deleteComment() {
- *  $commentmanager = new CommentManager();
- *  $comment = $commentManager->deleComment($_GET['id]);
- * 
- * header('Location : chapters.php?action=
- */
+
+function deleteComment($getid) {
+  $commentmanager = new CommentManager();
+  $comment = $commentManager->deleteComment($_GET['id']);
+ 
+ header('Location : admin.php?action=deleteComment');
+}
+      
+// Reporte les commentaires signalés
+function reportComment($postId, $commentId) {
+    
+
+if (isset($signal)) {
+                $moderation = new Moderation([
+                                                 'message'     => 'signale',
+                                                 'commentsid'  => $comm,
+                                                 'userid'      => $somebody,
+        ]);
+                if ($CommentManager->hasModeration($comm) == FALSE) {
+                    $ModerationManager->addModeration($moderation);
+                    $ModerationManager->updateSignaled($comm, $somebody);
+                } else {
+                    $ModerationManager->updateSignaled($comm, $somebody);
+                    $mess = setFlash("Attention !", "vous avez déjà signalé ce commentaire", "danger");
+                }
+            }
+        
+        
+    header('Location: chapters.php?action=comment&id=' . $postId, $commentId);
+    }
+

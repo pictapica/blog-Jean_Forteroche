@@ -52,7 +52,7 @@ class CommentManager extends Manager {
         return $comments;
     }
 
-    /*
+    
      
     public function countComments() {
       
@@ -66,11 +66,17 @@ class CommentManager extends Manager {
             $nb_comments->closeCursor();
       
     }
+    
+public function deleteComment(){
+    
+}
+    
+public function updateComment(){
+    
+}
+    
 
-    /* Ajouter : 
-     * 
-     * deleteComment
-     * updateComment
-     * signalComment
-     */
+public function signalComment(){
+    
+}
 }

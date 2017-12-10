@@ -10,7 +10,8 @@ class Manager {
 }
 
 /**
- * protected $_db;
+ * class Manager{ 
+ *      protected $_db;
         protected $_hostname = 'localhost';
         protected $_login = 'root';
         protected $_pwd = '';

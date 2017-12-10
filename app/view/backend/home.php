@@ -12,8 +12,8 @@
 <div class="row col-lg-12">
     <div class="col-lg-3"></div>
     <div class="col-lg-2">
-        <button class="btn btn-custom2 btn-lg">
-            <span class="glyphicon glyphicon-pencil"></span><br><br>Ecrire un billet</button>
+        <a href="editPost.php" class="btn btn-custom2 btn-lg" role="button" title="Lien 1">
+            <span class="glyphicon glyphicon-pencil"></span><br><br>Ecrire un billet</a>
     </div>
     <div class="col-lg-2">
         <button class="btn btn-custom3 btn-lg">

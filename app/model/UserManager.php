@@ -36,14 +36,14 @@ class UserManager extends Manager {
 
         return $result = $req->fetch(PDO::FETCH_ASSOC);
     }
-
+//quand l'inscription sera prête on pourra alors avoir un mot de passe haché)
     public function connect($pseudo, $password) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM user WHERE pseudo = :pseudo AND password = :password');
         $req->execute(array(
             'pseudo' => $pseudo,
-            'password' => $pass_hache));
+            'password' => $password));
         return $result = $req->fetch();
     }
-
+ 
 }
