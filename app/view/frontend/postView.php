@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 <div class='container-fluid'>
-
     <div class="row">
         <div class="col-lg-6">
             <h5><a href="chapters.php">Retour à la liste des billets</a></h5>
@@ -19,11 +18,8 @@
         </div>
         <div class="col-lg-1"></div>
     </section>
-
     <div class="line"></div>
-
     <div class="row">
-
         <div class="col-lg-1"></div>
         <div class="col-lg-10" id="comments">
             <br />
@@ -69,8 +65,6 @@
             </form>
         </div>
         <div class="col-lg-1"></div>
-
-
     </div>
 </div>
 <?php $content = ob_get_clean(); ?>
