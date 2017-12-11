@@ -8,23 +8,8 @@ Class Comments {
     protected $_comment;
     protected $_comment_date;
     
-    public function __construct($data) {
-        if (!empty($data)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
-            return $this->hydrate($data);
-        }
-    }
-
-    //Méthode assignant les valeurs spécifiées aux attributs correspondant.
-
-    public function hydrate(array $data) {
-        foreach ($data as $key => $value) {
-            $method = 'set' . ucfirst($key);
-
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-    }
+    use ConstructHydrate;
+    
 
     public function getId() {
         return $this->_id;
