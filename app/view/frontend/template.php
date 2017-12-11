@@ -21,12 +21,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-        <script>
-            tinymce.init({
-                selector: '#mytextarea'
-            });
-        </script>
+        
     </head>
 
     <body>

@@ -12,8 +12,8 @@
             <a href="#homeSubmenu" data-toggle="collapse"  aria-expanded="false">
                 <i class="glyphicon glyphicon-book">&nbsp</i>Billets</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li><a href="index.php">Tous les billets</a></li>
-                <li><a href="#">Nouveau billet</a></li>
+                <li><a href="../../view/backend/index.php">Tous les billets</a></li>
+                <li><a href="editPost.php">Nouveau billet</a></li>
             </ul>
         </li>
         <li>

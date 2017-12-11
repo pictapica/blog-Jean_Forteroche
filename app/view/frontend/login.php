@@ -1,11 +1,4 @@
-<?php
-// On démarre la session AVANT d'écrire du code HTML
-session_start();
-
-if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
-    
-}
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,8 +34,16 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
             
 
             <form action="../../../app/controler/login.php" method="post">
-                <input type="text" name="pseudo" placeholder="Pseudo">
-                <input type="password" name="password" placeholder="Mot de Passe">
+                <input type="text" name="pseudo" placeholder="Pseudo" required value="<?php
+                               if (isset($_COOKIE['pseudo'])) {
+                                   echo htmlspecialchars($_COOKIE['pseudo']);
+                               }
+                               ?>">
+                <input type="password" name="password" placeholder="Mot de Passe" required value="<?php
+                               if (isset($_COOKIE['password'])) {
+                                   echo htmlspecialchars($_COOKIE['password']);
+                               }
+                               ?>">
                 <input type="submit" name="connect" value="Connexion" class="btn-connect">
                 <div>
                     <a class="home_link" href ="../../../web/index.php">Retour à l'accueil du site</a>
