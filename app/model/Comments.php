@@ -8,6 +8,7 @@ Class Comments {
     protected $_comment;
     protected $_comment_date;
     
+<<<<<<< HEAD
     public function __construct($data){
       if(!empty($data)) {
           return $this->hydrate($data);
@@ -22,6 +23,9 @@ public function hydrate(array $data) {
             }
         }
     }
+=======
+    use ConstructHydrate;
+>>>>>>> 71996d6e171e2c2411f67cdbcb8bf0e9318a0233
     
 
     public function getId() {
