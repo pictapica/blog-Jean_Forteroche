@@ -22,43 +22,10 @@
     </head>
     <body>
         <a name="haut" id="haut"></a>
-        <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <img src="../web/images/logowhite.png" width="250" alt="Jean Forteroche">         
-                </div>
-                <h4>Billet simple pour l'Alaska</h4><br/>
-                <ul class="list-unstyled components">
-                    <li>
-                        <a href="../web/index.php">ACCUEIL</a>
-                        <a href="../app/view/frontend/about.php">A PROPOS</a>
-                        <a href="../web/chapters.php">CHAPITRES</a>
-                    </li>
-                </ul>
-                <br/>
-                <a href="../app/view/frontend/inscription.php">Inscription</a><br /><br /><br /><br />
-                <a href="../app/view/frontend/login.php">Administration</a>
-            </nav>
-
-            <!-- Page Content Holder -->
-            <div id="content">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="navbar-btn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </nav>
+        
                 <?= $content ?>
                 <div class="cRetour"></div>
-            </div>
-        </div>
+           
         <script>
             jQuery(document).ready(function () {
                 var duration = 500;
