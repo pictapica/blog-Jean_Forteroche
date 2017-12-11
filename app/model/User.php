@@ -1,21 +1,19 @@
 <?php
 
-class User
-{
+class User {
+
     protected $_user_id;
     protected $_firstname;
     protected $_name;
     protected $_pseudo;
     protected $_email;
     protected $_password;
-    
+
     public function __construct($data) {
-        if (!empty($data)) { // Si on a spécifié des valeurs, alors on hydrate l'objet.
+        if (!empty($data)) {
             return $this->hydrate($data);
         }
     }
-
-    //Méthode assignant les valeurs spécifiées aux attributs correspondant.
 
     public function hydrate(array $data) {
         foreach ($data as $key => $value) {
@@ -26,57 +24,57 @@ class User
             }
         }
     }
-    
+
     //GETTERS
-    
+
     public function getUserID() {
         return $this->_user_id;
     }
-    
+
     public function getFisrtNAme() {
         return $this->_firstname;
     }
-    
+
     public function getName() {
         return $this->_name;
     }
-    
+
     public function getPseudo() {
         return $this->_pseudo;
     }
-    
+
     public function getEmail() {
         return $this->_email;
     }
-    
+
     public function getPassword() {
         return $this->_password;
     }
-    
-    
+
     //SETTERS
-    
+
     public function setUserID($userid) {
-         $this->_user_id = $userid;
+        $this->_user_id = $userid;
     }
-    
+
     public function setFirstName($firstname) {
-         $this->_firstname = $firstname;
+        $this->_firstname = $firstname;
     }
-    
+
     public function setName($name) {
-         $this->_name = $name;
+        $this->_name = $name;
     }
-    
+
     public function setPseudo($pseudo) {
-         $this->_pseudo = $pseudo;
+        $this->_pseudo = $pseudo;
     }
-    
+
     public function setEmail($email) {
-         $this->_email = $email;
+        $this->_email = $email;
     }
-    
+
     public function setPassword($password) {
-         $this->_password = $password;
+        $this->_password = $password;
     }
+
 }

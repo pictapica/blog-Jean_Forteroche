@@ -35,7 +35,7 @@ session_start();
                 <ul class="list-unstyled components">
                     <li>
                         <a href="index.php">ACCUEIL</a>
-                        <a href="#">A PROPOS</a>
+                        <a href="../app/view/frontend/about.php">A PROPOS</a>
                         <a href="chapters.php">CHAPITRES</a>
                     </li>
                 </ul>
