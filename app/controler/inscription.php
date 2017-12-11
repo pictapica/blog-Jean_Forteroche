@@ -22,7 +22,7 @@ $password = $_POST['password'];
 $confirm_pass = $_POST['confirm_pass'];
 
 // Hachage du mot de passe
-$securepass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$pwdsecure = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 //Validation de l'email
 if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email)) {
@@ -35,7 +35,7 @@ if ($password != $confirm_pass) {
     header('Location: ../view/inscription.php?message=no_password_confirmation');
     exit();
 }
-if (save($firstname,$name, $pseudo,$email,$securepass)) {
+if (save($firstname,$name, $pseudo,$email,$pwdsecure)) {
     // Redirection du visiteur vers la page de connexion
     header('Location: ../view/frontend/login.php');
 } else {

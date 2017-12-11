@@ -5,7 +5,7 @@ require_once ("user.php");
 
 class UserManager extends Manager {
 
-    public function addUser($firstname, $name, $pseudo, $email,$securepass) {
+    public function addUser($firstname, $name, $pseudo, $email,$pwdsecure) {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO user (firstname, name, pseudo, email, password) VALUES(:firstname,
  :name, :pseudo, :email, :password)');
@@ -14,7 +14,7 @@ class UserManager extends Manager {
             'name' => $name,
             'pseudo' => $pseudo,
             'email' => $email,
-            'password' => $securepass));
+            'password' => $pwdsecure));
         $req->execute();
     }
 
