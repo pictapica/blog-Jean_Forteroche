@@ -1,5 +1,4 @@
-<?php session_start();?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,17 +23,15 @@
         <![endif]-->
     </head>
     <body>
-
+        <a name="haut" id="haut"></a>
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <?= include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
 
             <!-- Page Content Holder -->
             <div id="content" class="col-xs-10 col-md-10">
-                <?= include 'navbar.php'; ?>
+                <?php include 'navbar.php'; ?>
                 <?php include 'home.php'; ?>
-
-
             </div>
         </div>
         <!--jQuery CDN -->

@@ -9,24 +9,6 @@ function login(){
     require('../view/backend/login.php');
 }
 
-function listPosts() {
-    $postManager = new PostManager(); //Création d'un objet
-    $CommentManager = new CommentManager();
-
-    $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    //$nb_comments = $CommentManager->countComments();
-
-    require('../app/view/backend/allPosts.php');
-}
-function post() {
-    $postManager = new PostManager();
-    $CommentManager = new CommentManager();
-
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $CommentManager->getComments($_GET['id']);
-    
-    require('../app/view/backend/onePost.php');
-}
 function addPost ($title, $content) {
     $postManager = new PostManager();
     $posts =$postManager->addPost($title, $content);

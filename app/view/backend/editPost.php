@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<div class="row principal">
+<div class="row ">
     <section class="col-xs-12 col-md-offset-2 col-md-8">
         <h3>Ajouter un billet</h3>
         <div class="form-group">
