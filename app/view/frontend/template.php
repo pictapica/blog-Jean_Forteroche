@@ -5,14 +5,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-theme.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="bootstrap/css/custom.css">
+        <link rel="stylesheet" href="../../../web/bootstrap/css/custom.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -31,9 +31,9 @@
                 <h4>Billet simple pour l'Alaska</h4><br/>
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="index.php">ACCUEIL</a>
-                        <a href="about.php">A PROPOS</a>
-                        <a href="chapters.php">CHAPITRES</a>
+                        <a href="../web/index.php">ACCUEIL</a>
+                        <a href="../app/view/frontend/about.php">A PROPOS</a>
+                        <a href="../web/chapters.php">CHAPITRES</a>
                     </li>
                 </ul>
                 <br/>

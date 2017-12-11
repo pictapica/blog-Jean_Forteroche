@@ -8,7 +8,6 @@ class User {
     protected $_pseudo;
     protected $_email;
     protected $_password;
-<<<<<<< HEAD
 
     public function __construct($data) {
         if (!empty($data)) {
@@ -26,11 +25,6 @@ class User {
         }
     }
 
-=======
-    
-    use ConstructHydrate;
-    
->>>>>>> 71996d6e171e2c2411f67cdbcb8bf0e9318a0233
     //GETTERS
 
     public function getUserID() {
