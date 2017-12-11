@@ -27,19 +27,16 @@ class PostManager extends Manager {
         return $post;
     }
 
-    public function addPost(Post $post) {
+    public function addPost($title, $content) {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO post(title, content, creation_date, update_date) '
-                . 'VALUES(:title, 1, :content, NULL, creation_date, update_date ) ');
+        $req = $db->prepare('INSERT INTO post(title, user_id, content, creation_date) '
+                . 'VALUES(:title, 1, :content, NULL, NOW ) ');
         $req->execute(array(
-        'title'=> $post->getTitle(), PDO::PARAM_STR,
-        'content'=> $post->getContent(), PDO::PARAM_STR,
-        'creation_date' => $post->getCreationDate(), PDO::PARAM_STR,
-        'update_date'=> $post->getUpdateDate(), PDO::PARAM_STR));
-
+        'title'=> $title,
+        'user_id'=> 1,
+        'content'=> $content));
+ 
         $req->execute();
-
-        $post->hydrate(['id' => $this->$db->lastInsert()]);
     }
 
     public function updatePost(post $post, $getId) {
