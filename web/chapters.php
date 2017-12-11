@@ -40,6 +40,7 @@ session_start();
                     </li>
                 </ul>
                 <br/>
+                <a href="../app/view/frontend/inscription.php" class="login_link2">Inscription</a><br /><br /><br /><br />
                 <a href="../app/view/frontend/login.php" class="login_link">Administration</a><br><br><br>
             </nav>
             <!-- Page Content Holder -->

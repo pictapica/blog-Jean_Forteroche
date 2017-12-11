@@ -2,36 +2,44 @@
 
 require_once("../model/UserManager.php");
 require_once("../model/User.php");
-$manage = new UserManager();
+$manager = new UserManager();
 $user = new User();
 
-if (isset($_POST['inscription']) && isset($_POST['pseudo'])) {
-    if (empty($_POST['firstname'])) {
-        header('Location:../view/frontend/login.php?message=no_firstname');
-    } elseif (empty($_POST['name'])) {
-        header('Location:../view/frontend/login.php?message=no_name');
-    } elseif (empty($_POST['pseudo'])) {
-        header('Location:../view/frontend/login.php?message=no_pseudo');
-    } elseif (empty($_POST['email'])) {
-        header('Location:../view/frontend/login.php?message=no_email');
-    } elseif (empty($_POST['password'])) {
-        header('Location:../view/frontend/login.php?message=no_password');
-    } else {
-        $pwdsecure = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        if ($pwdsecure == $pass_hache) {
-            $user = new User(['firstname' => htmlspecialchars($_POST['firstname']),
-                'name' => htmlspecialchars($_POST['name']),
-                'pseudo' => htmlspecialchars($_POST['pseudo']),
-                'email' => htmlspecialchars($_POST['email']),
-                'password' => $pwdsecure]);
-            header('Location:../view/frontend/login.php?message=access_denied');
-        } else {
-            $manage->addUser($user);
-            $getid = $user->getUserID();
-            $_SESSION['id'] = $user->getPseudo();
-            header('Location:../view/backend/admin.php' . $_SESSION['id']);
-        }
-    }
+
+if (!isset($_POST['firstname']) OR ! isset($_POST['name']) OR ! isset($_POST['pseudo'])OR ! isset($_POST['email']) OR ! isset($_POST ['password']) OR !isset($_POST['confirm_pass'])) {
+
+    header('Location: ../view/frontend/login.php?message=no_data');
+    exit();
 }
+
+// Sécurisation des données
+$firstname = htmlspecialchars($_POST['firstname']);
+$name = htmlspecialchars($_POST['name']);
+$pseudo = htmlspecialchars($_POST['pseudo']);
+$email = htmlspecialchars($_POST['email']);
+$password = $_POST['password'];
+$confirm_pass = $_POST['confirm_pass'];
+
+// Hachage du mot de passe
+$securepass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+//Validation de l'email
+if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email)) {
+
+    header('Location: ../view/frontend/login.php?message=bad_email');
+    exit();
+}
+//Vérification du mot de passe
+if ($password != $confirm_pass) {
+    header('Location: ../view/inscription.php?message=no_password_confirmation');
+    exit();
+}
+if (save($firstname,$name, $pseudo,$email,$securepass)) {
+    // Redirection du visiteur vers la page de connexion
+    header('Location: ../view/frontend/login.php');
+} else {
+    // Redirection du visiteur vers la page de connexion
+    header('Location: ../view/inscription.php?message=internal_error');
+}
+

@@ -15,6 +15,8 @@
                     </li>
                 </ul>
                 <br/>
+                <a href="../app/view/frontend/inscription.php">Inscription</a><br /><br /><br /><br />
+                
                 <a href="../app/view/frontend/login.php">Administration</a>
             </nav>
 

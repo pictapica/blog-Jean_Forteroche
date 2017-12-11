@@ -1,4 +1,4 @@
-<p id="inscription">INSCRIPTION RESERVEE</p>
+<p id="inscription">INSCRIPTION</p>
         <form action="../../../app/controler/inscription.php" method="post">
 			<div class="form-horizontal">
 				<div class="form-group">
@@ -34,7 +34,7 @@
 				<div class="form-group">
             		<label for="pwd2" class="col-sm-4 control-label">Répétez votre mot de passe</label>
 					<div class="col-sm-8">
-						<input type="password" name="pwd2">
+						<input type="password" name="confirm_pass">
 					</div>
 				</div>
 				<div class="form-group">

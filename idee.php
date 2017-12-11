@@ -17,3 +17,17 @@
    update = accepter la modération
    delete = refuser la modération et donc accepter le message
 **/
+
+ 
+ /**  Dans MODEL/USERMANAGER.php
+  *  //On verifie si le pseudo ou l'email  existent dans la bdd  
+    public function verifAdd($pseudo, $email) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM user WHERE pseudo = :pseudo OR email=:email');
+        $req->execute(array(
+            'pseudo' => $pseudo, PDO::PARAM_STR,
+            '$email' => $email, PDO::PARAM_STR,));
+
+        return $result = $req->fetch(PDO::FETCH_ASSOC);
+    }
+  */

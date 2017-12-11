@@ -251,6 +251,16 @@ a.login_link:hover{
     color: #5cbdce;
 }
 
+a.login_link2 {
+    margin-left: 87px;
+    position: absolute;
+    bottom: 70px;
+}
+
+a.login_link2:hover{
+    text-decoration: underline;
+    color: #5cbdce;
+}
 /* ---------------------------------------------------
    DASHBOARD
 ----------------------------------------------------- */
