@@ -1,5 +1,5 @@
 <?php
-require('../app/controler/backend.php');
+require '../app/controler/backend.php';
 
 try { // On essaie de faire des choses
     if (isset($_GET['action'])) {
