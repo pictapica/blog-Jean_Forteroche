@@ -28,7 +28,7 @@ class CommentManager extends Manager {
      * @return type
      * 
      */
-    public function postComment($postId, $author, $comment) {
+    /**public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
                 . 'comment_date) VALUES(?, ?, ?, NOW())');
@@ -36,23 +36,21 @@ class CommentManager extends Manager {
 
         return $affectedLines;
         
-    }
+    }**/
 
     
-     /**public function postComment($postId, $author, $comment, $moderation) { ---------------AJOUTER MODERATION DANS LA TABLE COMMENTS
+    public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
                 . 'comment_date, moderation) VALUES(?, ?, ?, NOW(), 0)');
-        $affectedLines = $comments->execute(array($postId, $author, $comment, $moderation));
+        $affectedLines = $comments->execute(array($postId, $author, $comment));
             
             
 
         return $affectedLines;
         
     }
-      * 
-      * 
-      */
+      
     /* public function reportComment() {
      *   $db = $this->dbConnect();
      *    

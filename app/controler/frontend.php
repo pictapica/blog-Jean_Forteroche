@@ -28,7 +28,7 @@ function post() {
 
 
 
-/**function addComment($postId, $author, $comment, $moderation) {
+function addComment($postId, $author, $comment, $moderation) {
     $commentManager = new CommentManager();
 
     $affectedLines = $commentManager->postComment($postId, $author, $comment, $moderation);
@@ -39,10 +39,9 @@ function post() {
     } else {
         header('Location: chapters.php?action=post&id=' . $postId);
     }
- * 
- */
+}
 
-function addComment($postId, $author, $comment) {
+/**function addComment($postId, $author, $comment) {
     $commentManager = new CommentManager();
 
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
@@ -54,5 +53,5 @@ function addComment($postId, $author, $comment) {
         header('Location: chapters.php?action=post&id=' . $postId);
     }
     
-}
+}**/
 

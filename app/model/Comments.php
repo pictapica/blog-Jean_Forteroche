@@ -7,24 +7,22 @@ Class Comments {
     protected $_author;
     protected $_comment;
     protected $_comment_date;
-    //protected $_moderation;
+    protected $_moderation;
 
-    /**const NO_SIGNAL = 0;
+   const NO_SIGNAL = 0;
     const SIGNAL = 1;
     const BANNED = 2;
-     * 
-     */
-    
-    /**public function __construct($moderation) {
+     
+    public function __construct($moderation) {
         $this->setModeration($moderation);
-      
-        }**/
-    public function __construct($data) {
+          
+        }
+    /**public function __construct($data) {
         if (!empty($data)) {
             return $this->hydrate($data);
         }
     }
-
+**/
     public function hydrate(array $data) {
         foreach ($data as $key => $value) {
             $method = 'set' . ucfirst($key);
@@ -54,9 +52,9 @@ Class Comments {
     public function getCommentDate() {
         return $this->_comment_date;
     }
-    /**public function getModeration(){
+    public function getModeration(){
        return $this->_moderation;
-    }**/
+    }
 
     public function setId($id) {
         if (is_int($id)) {
@@ -91,13 +89,12 @@ Class Comments {
             $this->_content = $comment_date;
         }
     }
-    /**public function setModeration($moderation) {
+    public function setModeration($moderation) {
         if (is_int($moderation)){
             if (in_array($moderation, [self::NO_SIGNAL, self::SIGNAL, self::BANNED])) 
                     {
-                $this->_moderation= $moderation;
+                $this->_moderation = 0;
             }
             }        
         }
-    }**/
-}
+    }
