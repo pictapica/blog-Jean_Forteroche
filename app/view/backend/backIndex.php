@@ -1,5 +1,5 @@
 <?php
-var_dump(__DIR__);
+chdir("../../");
 require '../app/controler/backend.php';
 
 try { // On essaie de faire des choses

@@ -76,12 +76,40 @@ class CommentManager extends Manager {
         $nb_comments->closeCursor();
     }
 
-    public function deleteComment() {
-        
-    }
+    //Commentaires qui sont signalés
+    public function signaledComment($id) {
 
-    public function updateComment() {
+        $db = $this->dbConnect();
+        $signal = $db->prepare('SELECT id FROM comments WHERE id= :id AND moderation > 0');
+        $req->execute(array('id' => $id));
+        $signal = $req->fetch();
         
+        if(empty($signal)){
+            return false;
+        }else {
+            return true;
+        }    
     }
-
-}
+    //front-office
+    public function reportComment($id) { 
+        $db = $this->dbConnect();
+        $report = $db ->exec('UPDATE comments SET moderation = 1 WHERE id = ' . $_POST['id'] . ' ');
+        $req->execute(array('id' => $_POST['id']));
+        $report = $req->fetch();
+                
+    }//back-office
+     
+    Public function validate($id) {
+         $db = $this->dbConnect();   
+         $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  id = ' . $_POST['id'] . ' ');
+         echo $valide.' commentaires acceptés'; 
+      
+         //back-office
+      }      
+      public function ban($id){
+         $db = $this->dbConnect();   
+         $ban = $db->exec('UPDATE comments SET moderation = 2 WHERE  id = ' . $_POST['id'] . ' '); 
+           echo $ban.' commentaires bannis';  
+      }
+     
+}  

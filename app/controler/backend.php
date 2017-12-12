@@ -9,11 +9,11 @@ function login(){
     require('../view/backend/login.php');
 }
 
-function listPosts2() {
+function listPosts() {
     $postManager = new PostManager(); //Création d'un objet
     $CommentManager = new CommentManager();
 
-    $posts2 = $postManager->getPosts(); //Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
     //$nb_comments = $CommentManager->countComments();
 
     include('../app/view/backend/allposts.php');

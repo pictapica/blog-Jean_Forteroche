@@ -9,7 +9,7 @@ Class Comments {
     protected $_comment_date;
     protected $_moderation;
 
-   const NO_SIGNAL = 0;
+    const NO_SIGNAL = 0;
     const SIGNAL = 1;
     const BANNED = 2;
      
@@ -17,12 +17,7 @@ Class Comments {
         $this->setModeration($moderation);
           
         }
-    /**public function __construct($data) {
-        if (!empty($data)) {
-            return $this->hydrate($data);
-        }
-    }
-**/
+    
     public function hydrate(array $data) {
         foreach ($data as $key => $value) {
             $method = 'set' . ucfirst($key);

@@ -21,12 +21,12 @@
     </header>
     <br /><br /><br />
     <section class="blog-container">
-        <div class="row clo-lg-2"></div>
+        
         <?php
         while ($data = $posts->fetch()) {
             ?>
-            <div class="blog-card col-lg-10">
-                <div id="container">
+            <div class="blog-card col-lg-12">
+                <div id="container" class="container">
                     <div class="post">
                         <div class="title-content">
                             <h3>

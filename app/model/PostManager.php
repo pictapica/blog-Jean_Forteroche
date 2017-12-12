@@ -9,7 +9,7 @@ class PostManager extends Manager {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, user_id, left(content, 220) as extrait,'
                 . ' content, DATE_FORMAT(creation_date, \'Le %d/%m/%Y à %Hh%i\') '
-                . ' AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 6')
+                . ' AS creation_date_fr,DATE_FORMAT(update_date, \'Le %d/%m/%Y à %Hh%i\') AS update_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 6')
                 or die('Impossible d\'effectuer la requête');
 
         return $req;

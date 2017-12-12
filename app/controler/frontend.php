@@ -36,30 +36,13 @@ function addComment($postId, $author, $comment, $moderation) {
     }
 }
 
-
-/**function signal($moderation) {
-   $commentManager = new CommentManager();
-
-   $report = $commentmanager -> reportComment($moderation);
-   
-    if ($moderation = 1 ) {
-            return self::SIGNAL;
-        
-    }
-
-}
-
-/**function addComment($postId, $author, $comment) {
+function signal($id) {
     $commentManager = new CommentManager();
 
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $report = $commentManager->reportComment($id);
 
-    if ($affectedLines === false) {
-        // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    } else {
-        header('Location: chapters.php?action=post&id=' . $postId);
+    if ($report >= 1) {
+      echo'<p style=black>signalé</p>';
+      header('Location : chapters.php?action=signal&id=' . $postId);
     }
-    
-}**/
-
+}

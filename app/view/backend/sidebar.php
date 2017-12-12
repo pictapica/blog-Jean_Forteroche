@@ -17,14 +17,6 @@
             </ul>
         </li>
         <li>
-            <a href="#pageSubmenu"  data-toggle="collapse" aria-expanded="false">
-                <i class="glyphicon glyphicon-picture">&nbsp</i>Médias</a>
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li><a href="#">Toutes les images</a></li>
-                <li><a href="#">Ajouter une image</a></li>
-            </ul>
-        </li>
-        <li>
             <a href="#page2Submenu"  data-toggle="collapse" aria-expanded="false">
                 <i class="glyphicon glyphicon-comment">&nbsp</i>Commentaires</a>
             <ul class="collapse list-unstyled" id="page2Submenu">
