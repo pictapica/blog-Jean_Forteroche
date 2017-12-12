@@ -22,10 +22,10 @@
     </head>
     <body>
         <a name="haut" id="haut"></a>
-        
-                <?= $content ?>
-                <div class="cRetour"></div>
-           
+        <div class="wrapper">
+            <?= $content ?>
+            <div class="cRetour"></div>
+        </div>
         <script>
             jQuery(document).ready(function () {
                 var duration = 500;
@@ -48,6 +48,14 @@
                 })
             });
         </script>
+        <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                     $(this).toggleClass('active');
+                 });
+             });
+         </script>
         <!-- jQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <!-- Bootstrap Js CDN -->

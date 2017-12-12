@@ -3,7 +3,6 @@
 require_once('../app/model/PostManager.php');
 require_once('../app/model/CommentManager.php');
 
-
 function listPosts() {
     $postManager = new PostManager(); //Création d'un objet
     $CommentManager = new CommentManager();
@@ -20,13 +19,9 @@ function post() {
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $CommentManager->getComments($_GET['id']);
-    
+
     require('../app/view/frontend/postView.php');
 }
-
-
-
-
 
 function addComment($postId, $author, $comment, $moderation) {
     $commentManager = new CommentManager();
