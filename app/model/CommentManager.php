@@ -28,29 +28,28 @@ class CommentManager extends Manager {
      * @return type
      * 
      */
-    /**public function postComment($postId, $author, $comment) {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
-                . 'comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+    /*     * public function postComment($postId, $author, $comment) {
+      $db = $this->dbConnect();
+      $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
+      . 'comment_date) VALUES(?, ?, ?, NOW())');
+      $affectedLines = $comments->execute(array($postId, $author, $comment));
 
-        return $affectedLines;
-        
-    }**/
+      return $affectedLines;
 
-    
+      }* */
+
+
     public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
                 . 'comment_date, moderation) VALUES(?, ?, ?, NOW(), 0)');
         $affectedLines = $comments->execute(array($postId, $author, $comment));
-            
-            
+
+
 
         return $affectedLines;
-        
     }
-      
+
     /* public function reportComment() {
      *   $db = $this->dbConnect();
      *    
@@ -66,31 +65,23 @@ class CommentManager extends Manager {
         return $comments;
     }
 
-    
-     
     public function countComments() {
-      
-            $db = $this->dbConnect();
-            $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments GROUP BY post_id');
 
-            while ($data = $nb_comments->fetch())
-            {
-                echo $data['counter'] .'<br/>';
-            }
-            $nb_comments->closeCursor();
-      
+        $db = $this->dbConnect();
+        $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments GROUP BY post_id');
+
+        while ($data = $nb_comments->fetch()) {
+            echo $data['counter'] . '<br/>';
+        }
+        $nb_comments->closeCursor();
     }
-    
-public function deleteComment(){
-    
-}
-    
-public function updateComment(){
-    
-}
-    
 
-public function signalComment(){
-    
-}
+    public function deleteComment() {
+        
+    }
+
+    public function updateComment() {
+        
+    }
+
 }

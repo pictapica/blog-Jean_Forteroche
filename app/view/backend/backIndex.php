@@ -1,4 +1,5 @@
 <?php
+var_dump(__DIR__);
 require '../app/controler/backend.php';
 
 try { // On essaie de faire des choses

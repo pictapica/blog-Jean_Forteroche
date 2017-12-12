@@ -5,10 +5,10 @@ require_once('../app/model/CommentManager.php');
 
 function listPosts() {
     $postManager = new PostManager(); //Création d'un objet
-    $CommentManager = new CommentManager();
+    $commentManager = new CommentManager();
 
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    //$nb_comments = $CommentManager->countComments();
+    //$nb_comments = $commentManager->countComments();
 
     include('../app/view/frontend/listPostsView.php');
 }
@@ -34,6 +34,19 @@ function addComment($postId, $author, $comment, $moderation) {
     } else {
         header('Location: chapters.php?action=post&id=' . $postId);
     }
+}
+
+
+/**function signal($moderation) {
+   $commentManager = new CommentManager();
+
+   $report = $commentmanager -> reportComment($moderation);
+   
+    if ($moderation = 1 ) {
+            return self::SIGNAL;
+        
+    }
+
 }
 
 /**function addComment($postId, $author, $comment) {
