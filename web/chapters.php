@@ -37,8 +37,8 @@
                     </li>
                 </ul>
                 <br/>
-                <a href="../app/view/frontend/inscription.php">Inscription</a><br /><br /><br /><br />
-                <a href="../app/view/frontend/login.php">Administration</a>
+                <a href="../app/view/frontend/inscription.php" class="login_link2">Inscription</a><br /><br /><br /><br />
+                <a href="../app/view/frontend/login.php" class="login_link">Administration</a>
             </nav>
 
             <!-- Page Content Holder -->
@@ -71,7 +71,7 @@
                         } elseif ($_GET['action'] == 'addComment') {
                             if (isset($_GET['id']) && $_GET['id'] > 0) {
                                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                                addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                                 } else {
                                     // Autre exception
                                     throw new Exception('Tous les champs ne sont pas remplis !');

@@ -9,7 +9,21 @@ class Post {
     protected $_creation_date;
     protected $_update_date;
 
-   use ConstructHydrate;
+   public function __construct($data) {
+        if (!empty($data)) {
+            return $this->hydrate($data);
+        }
+    }
+
+    public function hydrate(array $data) {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
 
     //getters
     public function getID() {

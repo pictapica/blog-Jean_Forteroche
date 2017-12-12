@@ -24,6 +24,24 @@ function post() {
     require('../app/view/frontend/postView.php');
 }
 
+
+
+
+
+/**function addComment($postId, $author, $comment, $moderation) {
+    $commentManager = new CommentManager();
+
+    $affectedLines = $commentManager->postComment($postId, $author, $comment, $moderation);
+
+    if ($affectedLines === false) {
+        // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    } else {
+        header('Location: chapters.php?action=post&id=' . $postId);
+    }
+ * 
+ */
+
 function addComment($postId, $author, $comment) {
     $commentManager = new CommentManager();
 
@@ -35,5 +53,6 @@ function addComment($postId, $author, $comment) {
     } else {
         header('Location: chapters.php?action=post&id=' . $postId);
     }
+    
 }
 
