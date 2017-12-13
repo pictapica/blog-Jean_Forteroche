@@ -5,10 +5,6 @@
         <div class="form-group">
             <form class="well-lg form-horizontal" action="" method="post">
                 <div class="form-group">
-                    <label for="number">Numéro de billet</label> <br>
-                    <input type="text" class="form-control" name="number" required="required">
-                </div>
-                <div class="form-group">
                     <label for="title">Titre</label> <br>
                     <input type="text" class="form-control" name="title" required="required">
                 </div>
@@ -16,7 +12,7 @@
                     <label for="text">Texte du billet</label>
                     <textarea id="mytextarea" class="form-control" name="content" rows="20" placeholder="Chapitre entier" required="required"></textarea>
                 </div>
-                <input type="submit" formnovalidate="formnovalidate" name="add" value="Enregistrer le brouillon" class="btn btn-warning">
+                
                 <input type="submit" formnovalidate="formnovalidate" name="edit" value="Publier" class="btn btn-success">
             </form>
         </div>
