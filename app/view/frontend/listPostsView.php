@@ -25,7 +25,7 @@
         <?php
         while ($data = $posts->fetch()) {
             ?>
-            <div class="blog-card col-lg-12">
+            <div class="blog-card col-lg-12" style="background: url(../../../web/images/pic<?= $data['id']?>.jpg) center no-repeat;">
                 <div id="container" class="container">
                     <div class="post">
                         <div class="title-content">

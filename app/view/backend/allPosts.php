@@ -11,6 +11,8 @@
                 <th>Extrait</th>
                 <th>Date de creation</th>
                 <th>Date de modification</th>
+                <th>Publication</th>
+                <th>Lire</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +24,8 @@
                     <td><?= nl2br(htmlspecialchars($data['extrait'])) ?>...</td>
                     <td><?= $data['creation_date_fr'] ?></td>
                     <td><?= $data['update_date_fr'] ?></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <?php
             }
