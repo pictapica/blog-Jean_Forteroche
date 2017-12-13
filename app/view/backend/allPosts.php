@@ -11,9 +11,10 @@
                 <th>Extrait</th>
                 <th>Date de creation</th>
                 <th>Date de modification</th>
-                <th>Publication</th>
-                <th>Lire</th>
-                <th>Modifier</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
