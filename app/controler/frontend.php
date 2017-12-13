@@ -43,5 +43,5 @@ function signal($id) {
     $report = $commentManager->reportComment($id);
 
 
-    header('Location : chapters.php?action=get&id=' . $_GET['id']);
+    header('Location : chapters.php');
 }

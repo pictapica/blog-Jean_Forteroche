@@ -30,8 +30,7 @@
                     <?= nl2br(htmlspecialchars($comment['comment']))
                     ?><br /></p>
                 <p><span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-                    <a href="chapters.php?action=signal&amp;id=<?= $_GET['id']
-            ?>#comments" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> - 
+                    <a href="chapters.php?action=signal&amp;id=:id" style ="font-size: 0.7em; color: #e5a5a5"> Signaler</a> - 
                     <FONT size="2px"> Le <?= $comment['comment_date_fr'] ?></FONT></p><br />
                 <?php
             }

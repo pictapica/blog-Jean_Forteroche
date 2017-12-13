@@ -74,15 +74,15 @@ class CommentManager extends Manager {
     //front-office : Ils signalent le commentaire : moderation passe à 1
     public function reportComment($id) {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET moderation = 1 WHERE id = :id');
-        $req->execute(array());
+        $req = $db->prepare('UPDATE comments SET moderation = 1 WHERE :id = id');
+        $req->execute(array(':id',$id));
         
     }
 
     //back-office : Jean  decide de l'accepter : moderation repasse à 0
     Public function validate($id) {
         $db = $this->dbConnect();
-        $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  id = ' . $_POST['id']);
+        $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  :id =  id');
         
     }
 
