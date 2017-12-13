@@ -19,12 +19,12 @@ class UserManager extends Manager {
     }
 
 //quand l'inscription sera prête on pourra alors avoir un mot de passe haché)
-    public function connect($pseudo, $securepass) {
+    public function connect($pseudo, $pwdsecure) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM user WHERE pseudo = :pseudo AND password = :password');
         $req->execute(array(
             'pseudo' => $pseudo,
-            'password' => $securepass));
+            'password' => $pwdsecure));
         return $result = $req->fetch();
     }
 

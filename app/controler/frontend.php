@@ -41,8 +41,7 @@ function signal($id) {
 
     $report = $commentManager->reportComment($id);
 
-    if ($report >= 1) {
-      echo'<p style=black>signalé</p>';
-      header('Location : chapters.php?action=signal&id=' . $postId);
+    
+      header('Location : chapters.php?action=get&id=' . $_GET['id']);
     }
-}
+

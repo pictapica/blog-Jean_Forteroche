@@ -13,6 +13,7 @@
                 <th>Date de modification</th>
                 <th>Publication</th>
                 <th>Lire</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
@@ -24,8 +25,10 @@
                     <td><?= nl2br(htmlspecialchars($data['extrait'])) ?>...</td>
                     <td><?= $data['creation_date_fr'] ?></td>
                     <td><?= $data['update_date_fr'] ?></td>
-                    <td></td>
-                    <td></td>
+                    <td><button>Publier</button></td>
+                    <td><button>Lire</button></td>
+                    <td><button>Modifier</button></td>
+                    <td><button>Supprimer</button></td>
                 </tr>
                 <?php
             }

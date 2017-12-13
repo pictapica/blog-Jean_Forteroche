@@ -19,25 +19,26 @@ function listPosts() {
     include('../app/view/backend/allposts.php');
 }
 
-function addPost ($title, $content) {
+function addchapter ($title, $content) {
     $postManager = new PostManager();
     $posts =$postManager->addPost($title, $content);
     
     header ('Location: editPost.php?action=');
 }
 
-function deletePost ($postid) {
+function deletechapter ($postid) {
     $postManager = new PostManager();
     $postManager->detelePost($postid);
     
     header('Location : admin.php?action=');
+    echo'votre chapitre bien été supprimé !';
 }
 
-function updatePost() {
+function updatechapter() {
     $postManager = new PostManager();
     $postManager->updatePost($_POST['title'],$_POST['content'],$_GET['id'],$_GET['user_id']);
     
-    //header(...
+    header('Location : ');
 }
 
 function updateComment() {
@@ -55,25 +56,19 @@ function deleteComment($getid) {
 }
       
 // Reporte les commentaires signalés
-function reportComment($postId, $commentId) {
-    
-
-if (isset($signal)) {
-                $moderation = new Moderation([
-                                                 'message'     => 'signale',
-                                                 'commentsid'  => $comm,
-                                                 'userid'      => $somebody,
-        ]);
-                if ($CommentManager->hasModeration($comm) == FALSE) {
-                    $ModerationManager->addModeration($moderation);
-                    $ModerationManager->updateSignaled($comm, $somebody);
+function reportComment($postId, $id) {
+if (isset($report)) {
+               
+                if ($CommentManager->signaledComment($signal) == FALSE) {
+                    $CommentManager->reportcomment($moderation);
+                    $CommentManager->validate($id);
                 } else {
-                    $ModerationManager->updateSignaled($comm, $somebody);
-                    $mess = setFlash("Attention !", "vous avez déjà signalé ce commentaire", "danger");
+                    $CommentManager->updateSignaled();
+                    echo'Attention message déjà signalé';
                 }
             }
         
         
-    header('Location: chapters.php?action=comment&id=' . $postId, $commentId);
+    header('Location: chapters.php?action=comment&id=' . $postId, $id);
     }
 

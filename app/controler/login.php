@@ -17,12 +17,12 @@ if (!empty($_POST)) {
         exit();
     } else {
 
-        $pseudo = htmlspecialchars($_POST['pseudo']);
+        //$pseudo = htmlspecialchars($_POST['pseudo']);
         //$pwdsecure = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        // Hachage du mot de passe
-        //$pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        //if ($pwdsecure == $pass_hache) {
+        //Hachage du mot de passe
+        //$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        //if ($pwdsecure == $pass_hash) {
             //vérification des identifiants
             $result = $userManager->connect($_POST['pseudo'], $_POST['password']);
             if (!isset($result)) {
@@ -37,4 +37,4 @@ if (!empty($_POST)) {
                 header('Location:../view/backend/admin.php');
             }
         }
-    }
+}

@@ -83,33 +83,34 @@ class CommentManager extends Manager {
         $signal = $db->prepare('SELECT id FROM comments WHERE id= :id AND moderation > 0');
         $req->execute(array('id' => $id));
         $signal = $req->fetch();
-        
-        if(empty($signal)){
+
+        if (empty($signal)) {
             return false;
-        }else {
+        } else {
             return true;
-        }    
+        }
     }
-    //front-office
-    public function reportComment($id) { 
+
+    //front-office : Ils signalent le commentaire : moderation passe à 1
+    public function reportComment($getId) {
         $db = $this->dbConnect();
-        $report = $db ->exec('UPDATE comments SET moderation = 1 WHERE id = ' . $_POST['id'] . ' ');
-        $req->execute(array('id' => $_POST['id']));
+        $report = $db->exec('UPDATE comments SET moderation = 1 WHERE id = ' . $_GET['id']);
+        $req->execute(array('id' => $_GET['id']));
         $report = $req->fetch();
-                
-    }//back-office
-     
+    }
+
+    //back-office : Jean  decide de l'accepter
     Public function validate($id) {
-         $db = $this->dbConnect();   
-         $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  id = ' . $_POST['id'] . ' ');
-         echo $valide.' commentaires acceptés'; 
-      
-         //back-office
-      }      
-      public function ban($id){
-         $db = $this->dbConnect();   
-         $ban = $db->exec('UPDATE comments SET moderation = 2 WHERE  id = ' . $_POST['id'] . ' '); 
-           echo $ban.' commentaires bannis';  
-      }
-     
-}  
+        $db = $this->dbConnect();
+        $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  id = ' . $_POST['id']);
+        
+    }
+
+    //back-office : Jean decide de le bannir
+    public function ban($id) {
+        $db = $this->dbConnect();
+        $ban = $db->exec('UPDATE comments SET moderation = 2 WHERE  id = ' . $_POST['id']);
+       
+    }
+
+}
