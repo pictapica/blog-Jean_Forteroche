@@ -8,7 +8,7 @@ function listPosts() {
     $commentManager = new CommentManager();
 
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    //$nb_comments = $commentManager->countComments();
+    $nb_comments = $commentManager->countComments();
 
     include('../app/view/frontend/listPostsView.php');
 }
@@ -36,12 +36,12 @@ function addComment($postId, $author, $comment, $moderation) {
     }
 }
 
+
 function signal($id) {
     $commentManager = new CommentManager();
 
     $report = $commentManager->reportComment($id);
 
-    
-      header('Location : chapters.php?action=get&id=' . $_GET['id']);
-    }
 
+    header('Location : chapters.php?action=get&id=' . $_GET['id']);
+}

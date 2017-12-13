@@ -1,6 +1,7 @@
 <?php
 
 require_once("../app/model/Manager.php");
+require_once("../app/model/Comments.php");
 
 class CommentManager extends Manager {
 
@@ -20,40 +21,16 @@ class CommentManager extends Manager {
         return $comments;
     }
 
-    /**
-     * 
-     * @param type $postId
-     * @param type $author
-     * @param type $comment
-     * @return type
-     * 
-     */
-    /*     * public function postComment($postId, $author, $comment) {
-      $db = $this->dbConnect();
-      $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
-      . 'comment_date) VALUES(?, ?, ?, NOW())');
-      $affectedLines = $comments->execute(array($postId, $author, $comment));
-
-      return $affectedLines;
-
-      }* */
-
-
+   
     public function postComment($postId, $author, $comment) {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, '
                 . 'comment_date, moderation) VALUES(?, ?, ?, NOW(), 0)');
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
-
-
         return $affectedLines;
     }
 
-    /* public function reportComment() {
-     *   $db = $this->dbConnect();
-     *    
-      } */
 
     public function showAllComments() {
         $comments = array();
@@ -68,19 +45,22 @@ class CommentManager extends Manager {
     public function countComments() {
 
         $db = $this->dbConnect();
-        $nb_comments = $db->query('SELECT COUNT(*) AS counter FROM comments GROUP BY post_id');
+        $req = $db->query('SELECT COUNT(*) AS nbcomments FROM comments GROUP BY post_id');
 
-        while ($data = $nb_comments->fetch()) {
-            echo $data['counter'] . '<br/>';
+        $data = $req->fetchAll();
+        $req->closecursor();
+        return $data;
+                
         }
-        $nb_comments->closeCursor();
-    }
+        
+        
+    
 
     //Commentaires qui sont signalés
     public function signaledComment($id) {
 
         $db = $this->dbConnect();
-        $signal = $db->prepare('SELECT id FROM comments WHERE id= :id AND moderation > 0');
+        $req = $db->prepare('SELECT id FROM comments WHERE id= :id AND moderation > 0');
         $req->execute(array('id' => $id));
         $signal = $req->fetch();
 
@@ -92,21 +72,21 @@ class CommentManager extends Manager {
     }
 
     //front-office : Ils signalent le commentaire : moderation passe à 1
-    public function reportComment($getId) {
+    public function reportComment($id) {
         $db = $this->dbConnect();
-        $report = $db->exec('UPDATE comments SET moderation = 1 WHERE id = ' . $_GET['id']);
-        $req->execute(array('id' => $_GET['id']));
-        $report = $req->fetch();
+        $req = $db->prepare('UPDATE comments SET moderation = 1 WHERE id = :id');
+        $req->execute(array());
+        
     }
 
-    //back-office : Jean  decide de l'accepter
+    //back-office : Jean  decide de l'accepter : moderation repasse à 0
     Public function validate($id) {
         $db = $this->dbConnect();
         $valide = $db->exec('UPDATE comments SET moderation = 0 WHERE  id = ' . $_POST['id']);
         
     }
 
-    //back-office : Jean decide de le bannir
+    //back-office : Jean decide de le bannir : moderation passe à 2s
     public function ban($id) {
         $db = $this->dbConnect();
         $ban = $db->exec('UPDATE comments SET moderation = 2 WHERE  id = ' . $_POST['id']);
