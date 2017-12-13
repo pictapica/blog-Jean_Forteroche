@@ -3,12 +3,12 @@
 class Manager {
 
     protected function dbConnect() {
-        $db = new \PDO('mysql:host=db714791558.db.1and1.com;dbname=dbo714791558;charset=utf8', 'u91646262', 'Projet_3/Blog', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $db = new \PDO('mysql:host=localhost;dbname=blog_writer;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         return $db;
     }
 
 }
-
+//('mysql:host=db714791558.db.1and1.com;dbname=db714791558;charset=utf8', 'dbo714791558', 'Projet_3/Blog', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 /**
  * class Manager{ 
  *      protected $_db;

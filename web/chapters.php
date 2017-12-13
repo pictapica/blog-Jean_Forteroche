@@ -26,7 +26,7 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <img src="../web/images/logowhite.png" width="250" alt="Jean Forteroche">         
+                    <img src="images/logowhite.png" width="250" alt="Jean Forteroche">         
                 </div>
                 <h4>Billet simple pour l'Alaska</h4><br/>
                 <ul class="list-unstyled components">
