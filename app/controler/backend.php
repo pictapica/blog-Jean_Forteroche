@@ -18,6 +18,16 @@ function listPosts() {
     include('../app/view/backend/allposts.php');
 }
 
+function post() {
+    $postManager = new PostManager();
+    $CommentManager = new CommentManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $CommentManager->getComments($_GET['id']);
+
+    require('../app/view/backend/post.php');
+}
+
 function addChapter() {
     $title = htmlspecialchars($_POST['title']);
     $content = $_POST['content'];

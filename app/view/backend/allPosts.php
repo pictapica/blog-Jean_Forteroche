@@ -27,11 +27,11 @@
                         <form method="post" 
                               action="admin.php?path=updateChapter">
                             <input type="button" name="id" value="<?php echo $post->getId(); ?>"/>
-                            <input class="submitBillet" type="submit" value="&plusmn;" title="Modifier">
+                            <input class="submitBillet" type="submit" value="" title="Modifier">
                         </form>
                         <form method="post" action="admin.php?path=deleteChapter">
                             <input type="button" name="id" value="<?php echo $post->getId(); ?>"/>
-                            <input class="submitBillet" type="submit" value="&#9746;" title="Supprimer">
+                            <input class="submitBillet" type="submit" value="" title="Supprimer">
                         </form></td>
                 </tr>
                 <?php
