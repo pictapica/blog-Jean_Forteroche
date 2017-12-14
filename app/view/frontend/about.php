@@ -57,8 +57,8 @@
                     </div>
                 </nav>
                 <div class="container2">
-                    <h2>Jean FORTEROCHE</h2>
-                    <p>Bla bla bla </p>
+                    <h2></h2>
+                    <p>Bla bla bla</p>
                 </div>
 
 
