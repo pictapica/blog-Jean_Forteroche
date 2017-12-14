@@ -37,11 +37,11 @@ function addComment($postId, $author, $comment, $moderation) {
 }
 
 
-function signal($id) {
-    $commentManager = new CommentManager();
+function signal() {
+    $commentSignal = new CommentManager();
 
-    $report = $commentManager->reportComment($id);
+    $signal = $commentSignal->reportComment($id);
 
 
-    header('Location : chapters.php');
+    header('Location : chapters.php#comments');
 }

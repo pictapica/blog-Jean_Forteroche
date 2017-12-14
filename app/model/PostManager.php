@@ -27,33 +27,35 @@ class PostManager extends Manager {
         return $post;
     }
 
-    public function addPost($title, $content) {
+    public function addPost($post) {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO post(title, user_id, content, creation_date) '
-                . 'VALUES(:title, 1, :content, NULL, NOW ) ');
-        $req->execute(array(
-        'title'=> $title,
-        'user_id'=> 1,
-        'content'=> $content));
- 
-        $req->execute();
+                . 'VALUES(:title, 1, :content, NOW ) ');
+        $req->bindValue(':title',$post->getTitle());
+        $req->bindValue(':user_id',$post = '1');
+        $req->bindValue(':content',$post->getContent());   
+        $result =$req->execute();
+        if($result){
+            header('Location:admin.php');
+        }
     }
 
-    public function updatePost(post $post, $getId) {
+    public function updatePost(post $post) {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE post SET title = :title, user_id = 1, content=:content,'
-                . 'update_date = :update_date WHERE id = ' . $getId);
-        $req->execute(array(
-       'title'=> $post->getTitle(), PDO::PARAM_STR,
-        'content'=>$post->getContent(), PDO::PARAM_STR,
-        'update_date'=> $post->getUpdateDate(), PDO::PARAM_STR));
-
-        $req->execute();
+        $resultat = $db->prepare('UPDATE post SET title = :title, user_id = 1, content=:content,'
+                . 'update_date = :update_date WHERE :id = id');
+        $resultat->bindValue(':title', $post->getTitle());
+        $resultat->bindValue(':content', $post->getContent());
+        $resultat->bindValue(':update_date', $post->getUpdateDate());
+        $resultat->bindValue(':id',$post->getId());
+        $resultat->execute();
     }
 
-    public function deletePost($getId) {
+    public function deletePost($id) {
         $db = $this->dbConnect();
-        $req = $db->exec('DELETE FROM post WHERE id=' . $getId);
+        $req = $db->exec('DELETE FROM post WHERE :id=id');
+        $resultat->binvalue(':id',$id);
+        $resultat->execute();
     }
 
 }
