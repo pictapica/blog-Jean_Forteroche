@@ -7,14 +7,11 @@
         </div>
         <thead>
             <tr>
-                <th>Titre</th>
-                <th>Extrait</th>
-                <th>Date de creation</th>
+                <th style="width:5%">Titre</th>
+                <th style="width:40%">Extrait</th>
+                <th style="width:10%">Date de creation</th>
                 <th>Date de modification</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                
             </tr>
         </thead>
         <tbody>
@@ -26,10 +23,16 @@
                     <td><?= nl2br(htmlspecialchars($data['extrait'])) ?>...</td>
                     <td><?= $data['creation_date_fr'] ?></td>
                     <td><?= $data['update_date_fr'] ?></td>
-                    <td><button>Publier</button></td>
-                    <td><button>Lire</button></td>
-                    <td><button>Modifier</button></td>
-                    <td><button>Supprimer</button></td>
+                    <td style="width:15%">
+                        <form method="post" 
+                              action="admin.php?path=updateChapter">
+                            <input type="button" name="id" value="<?php echo $post->getId(); ?>"/>
+                            <input class="submitBillet" type="submit" value="&plusmn;" title="Modifier">
+                        </form>
+                        <form method="post" action="admin.php?path=deleteChapter">
+                            <input type="button" name="id" value="<?php echo $post->getId(); ?>"/>
+                            <input class="submitBillet" type="submit" value="&#9746;" title="Supprimer">
+                        </form></td>
                 </tr>
                 <?php
             }

@@ -3,7 +3,7 @@
     <section class="col-xs-12 col-md-offset-2 col-md-8">
         <h3>Ajouter un billet</h3>
         <div class="form-group">
-            <form class="well-lg form-horizontal" action="" method="post">
+            <form class="well-lg form-horizontal" action="admin.php?path=addChapter" method="post">
                 <div class="form-group">
                     <label for="title">Titre</label> <br>
                     <input type="text" class="form-control" name="title" required="required">
