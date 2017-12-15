@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 13 déc. 2017 à 16:25
+-- Généré le :  jeu. 14 déc. 2017 à 08:54
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `author` varchar(255) CHARACTER SET utf8 NOT NULL,
   `comment` text CHARACTER SET utf8 NOT NULL,
   `comment_date` datetime NOT NULL,
-  `moderation` tinyint(3) NOT NULL DEFAULT '0',
+  `moderation` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `comments`
@@ -63,7 +63,8 @@ INSERT INTO `comments` (`id`, `post_id`, `author`, `comment`, `comment_date`, `m
 (17, 8, 'Alex', 'Encore un test ', '2017-12-12 13:14:18', 0),
 (18, 10, 'Tom', 'Un commentaire pour le chapitre 5', '2017-12-12 14:00:48', 0),
 (19, 2, 'Joachim', 'Et un autre commentaire ?', '2017-12-12 15:18:42', 0),
-(20, 9, 'ALex', 'Test', '2017-12-13 10:58:15', 0);
+(20, 9, 'ALex', 'Test', '2017-12-13 10:58:15', 0),
+(21, 10, 'Alex', 'Test', '2017-12-14 01:11:19', 0);
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `firstname`, `name`, `pseudo`, `email`, `password`) VALUES
-(1, 'Jean', 'Forteroche', 'JeanJean', 'jeanforteroche@gmail.com', '$2y$10$NCpSEg.ddSpLbJ4VgefHzOTV4ESPoCRGQFBTS1R/jmExFRb2FkQc6');
+(1, 'Jean', 'Forteroche', 'JeanJean', 'jeanforteroche@gmail.com', '$2y$10$FOfYHEGWp/lEQRJYQPM66OesNe/0SlvRgCIlJpyjsKUWgvPxw.pXm');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

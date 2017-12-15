@@ -32,7 +32,7 @@ class PostManager extends Manager {
         $req = $db->prepare('INSERT INTO post(title, user_id, content, creation_date) '
                 . 'VALUES(:title, 1, :content, NOW ) ');
         $req->bindValue(':title',$post->getTitle());
-        $req->bindValue(':user_id',$post = '1');
+        $req->bindValue(':user_id',$post ->getUserId(1));
         $req->bindValue(':content',$post->getContent());   
         $result =$req->execute();
         if($result){
