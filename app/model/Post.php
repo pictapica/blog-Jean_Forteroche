@@ -26,7 +26,7 @@ class Post {
     }
 
     //getters
-    public function getID() {
+    public function getId() {
         return $this->_id;
     }
 
