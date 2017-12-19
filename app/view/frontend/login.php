@@ -6,15 +6,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap-grid.css">
         <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-grid.min.css">
         <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-theme.css">
         <link rel="stylesheet" href="../../../web/bootstrap/css/bootstrap-theme.min.css">
         <!-- Our Custom CSS -->
 
-        <link rel="stylesheet" href="../../../web/bootstrap/css/login_form.css">
+        <link rel="stylesheet" href="web/bootstrap/css/login_form.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -27,13 +27,13 @@
 
     <body>
         <div id="login-button">
-            <img src="../../../web/images/user.png" alt ="login">
+            <img src="web/images/user.png" alt ="login">
         </div>
         <div id="container">
             <h1>Connexion</h1>
             
 
-            <form action="../../../app/controler/login.php" method="post">
+            <form action="app/controler/login.php" method="post">
                 <input type="text" name="pseudo" placeholder="Pseudo" required value="<?php
                                if (isset($_COOKIE['pseudo'])) {
                                    echo htmlspecialchars($_COOKIE['pseudo']);
@@ -46,7 +46,7 @@
                                ?>">
                 <input type="submit" name="connect" value="Connexion" class="btn-connect">
                 <div>
-                    <a class="home_link" href ="../../../web/index.php">Retour à l'accueil du site</a>
+                    <a class="home_link" href ="web/index.php">Retour à l'accueil du site</a>
                 </div>
             </form>
         </div>

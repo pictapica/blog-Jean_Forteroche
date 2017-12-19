@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <div class='container-fluid'>
+    <?php include 'navbar.php';?> 
     <div class="row">
         <div class="col-lg-6">
             <h5><a href="chapters.php">Retour à la liste des billets</a></h5>

@@ -31,7 +31,7 @@
                 <h4>Billet simple pour l'Alaska</h4><br/>
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="index.php">ACCUEIL</a>
+                        <a href="../index.php">ACCUEIL</a>
                         <a href="../app/view/frontend/about.php">A PROPOS</a>
                         <a href="chapters.php">CHAPITRES</a>
                     </li>
@@ -43,18 +43,7 @@
 
             <!-- Page Content Holder -->
             <div id="content">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="navbar-btn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </nav>
+                
                 <?php
                 require('../app/controler/frontend.php');
                 try { // On essaie de faire des choses

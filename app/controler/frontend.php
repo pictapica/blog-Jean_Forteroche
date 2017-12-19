@@ -8,7 +8,6 @@ function listPosts() {
     $commentManager = new CommentManager();
 
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
-    $nb_comments = $commentManager->countComments();
 
     include('../app/view/frontend/listPostsView.php');
 }
@@ -29,7 +28,7 @@ function addComment($postId, $author, $comment, $moderation) {
     $affectedLines = $commentManager->postComment($postId, $author, $comment, $moderation);
 
     if ($affectedLines === false) {
-        // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
+       
         throw new Exception('Impossible d\'ajouter le commentaire !');
     } else {
         header('Location: chapters.php?action=post&id=' . $postId);

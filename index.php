@@ -5,14 +5,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="web/bootstrap/css/bootstrap-theme.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="bootstrap/css/custom.css">
+        <link rel="stylesheet" href="web/bootstrap/css/custom.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -24,23 +24,23 @@
             <div class="video-container">
                 <div class="filter"></div>
                 <video autoplay loop class="fillWidth">
-                    <source src="../web/images/Snow_Wires.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                    <source src="web/images/Snow_Wires.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
 
                 </video>
                 <div class="title-container">
                     <div class="headline">
-                        <img src="../web/images/logotransparent.png" height="130" alt="Jean Forteroche"><br/>
+                        <img src="web/images/logotransparent.png" height="130" alt="Jean Forteroche"><br/>
 
                         <h1 class="text-white text-thin">Billet simple pour l'Alaska</h1>
                         <h4 class="text-white text-thin">Decouvrez son prochain livre  chapitre par chapitre</h4> <br/>  
-                        <a href="chapters.php" class="btn btn-warning btn-lg" role="button">LIRE LE BLOG</a>
+                        <a href="web/chapters.php" class="btn btn-warning btn-lg" role="button">LIRE LE BLOG</a>
                     </div>
                 </div>
                 <div class="text-center" id="loadBannerVideoSpinner" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 4px; display: none; margin-top: 20px;">
                     <h1 class="text-thin text-primary">Loading Coverr... <i class="fa fa-circle-o-notch fa-spin"></i></h1>
                 </div>
                 <div class="poster hidden">
-                    <img src="../web/images/Snow_Wires.jpg" alt="">
+                    <img src="web/images/Snow_Wires.jpg" alt="">
                 </div>
             </div>
         </div>
