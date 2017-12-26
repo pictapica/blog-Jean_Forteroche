@@ -1,7 +1,7 @@
 <?php
 
-require_once("../app/model/Manager.php");
-require_once("../app/model/Comments.php");
+require_once(dirname(__DIR__).'/model/Manager.php');
+require_once(dirname(__DIR__).'/model/Comments.php');
 
 class CommentManager extends Manager {
 

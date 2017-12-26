@@ -31,7 +31,7 @@
             <!-- Page Content Holder -->
             <div id="content" class="col-xs-10 col-md-10">
                 <?php include 'navbar.php'; ?>
-                <?php include 'home.php'; ?>
+                <?php include 'home.php'; ?> 
             </div>
         </div>
         <!--jQuery CDN -->

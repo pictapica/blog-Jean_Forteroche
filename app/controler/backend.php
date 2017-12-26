@@ -1,8 +1,7 @@
 <?php
-
-require_once('../app/model/PostManager.php');
-require_once('../app/model/CommentManager.php');
-require_once('../app/model/userManager.php');
+require_once(dirname(__DIR__).'/model/PostManager.php');
+require_once(dirname(__DIR__).'/model/CommentManager.php');
+require_once(dirname(__DIR__).'/model/userManager.php');
 
 function login() {
     require('../view/backend/login.php');
@@ -14,8 +13,8 @@ function listPosts() {
 
     $posts = $postManager->getPosts(); //Appel d'une fonction de cet objet
     //$nb_comments = $CommentManager->countComments();
-
-    include('../app/view/backend/allposts.php');
+    
+    include('../app/view/backend/allPosts.php');
 }
 
 function post() {
