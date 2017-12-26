@@ -33,7 +33,7 @@
                 <?php include 'navbar.php'; ?>
                 <?php
                
-                include ('app/controler/backend.php');
+                require ('../app/controler/backend.php');
 
                 try { 
                     if (isset($_GET['action'])) {
